@@ -12,11 +12,15 @@
 <h1>Tickets.jsp</h1>
 <%
 
-	String name = request.getParameter("q");
-	String surName = request.getParameter("f");
+	String name = request.getParameter("name");
+	String surName = request.getParameter("surName");
 	String eMail = request.getParameter("eMail");
+	String numberTickets = request.getParameter("numberTickets");
+	String pay = request.getParameter("pay");
+	String discount = String.valueOf(((1f - Float.valueOf(request.getParameter("discount")))*100));
 	
-	out.println(name+" "+surName+" "+eMail);
+	
+	out.println(name+" "+ surName +" "+eMail+" "+ numberTickets +" "+ pay + " "+ discount + "%");
 	 
 //	ConnectionController connectionController = new ConnectionController();
 //	connectionController.insert(name,surName,areaForm);

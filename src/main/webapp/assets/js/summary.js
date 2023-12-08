@@ -80,7 +80,13 @@ function showSummary(){
         formulario.action = "../jsp/tickets.jsp";
         formulario.method = 'GET';
         
-        formulario.innerHTML = '<input name="q" value="test"> <input name="f" value="otro">';
+        formulario.innerHTML = `<input name="name" value=${data.name}> 
+        						<input name="surName" value=${data.surName}>
+        						<input name="eMail" value=${data.eMail}>
+        						<input name="numberTickets" value=${data.numberTickets}>
+        						<input name="pay" value=${data.pay}>
+        						<input name="discount" value=${data.discount}>
+        						`;
         
         // el formulario debe estar en el document para poder enviarlo
         document.body.append(formulario);
