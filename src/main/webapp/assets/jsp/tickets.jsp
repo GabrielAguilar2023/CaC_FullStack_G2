@@ -12,8 +12,8 @@
 <h1>Tickets.jsp</h1>
 <%
 
-	String name = request.getParameter("name");
-	String surName = request.getParameter("surName");
+	String name = request.getParameter("q");
+	String surName = request.getParameter("f");
 	String eMail = request.getParameter("eMail");
 	
 	out.println(name+" "+surName+" "+eMail);

@@ -76,20 +76,36 @@ function showSummary(){
 
 
 
-	let formulario = document.createElement("form");
-	let cajaTextNombres=document.createElement("input");
+        let formulario = document.createElement('form');
+        formulario.action = "../jsp/tickets.jsp";
+        formulario.method = 'GET';
+        
+        formulario.innerHTML = '<input name="q" value="test"> <input name="f" value="otro">';
+        
+        // el formulario debe estar en el document para poder enviarlo
+        document.body.append(formulario);
+        
+        formulario.submit();
+
+
+//	let formulario = document.createElement("form");
+//	let cajaTextNombres=document.createElement("input");
 	
-	formulario.setAttribute('method', "post");//Asignar el atributo method
-	formulario.setAttribute('action', "../jsp/tickets.jsp");//Asignar el atributo action
-    cajaTextNombres.setAttribute('type', "text");//Asignar el atributo type
-    cajaTextNombres.setAttribute('name', "nameSend");//Asignar el atributo type
-    ;
+//	formulario.setAttribute('method', "get");//Asignar el atributo method
+//	formulario.setAttribute('action', "../jsp/tickets.jsp");//Asignar el atributo action
+//	formulario.setAttribute('id', "formulario");//Asignar el atributo action
+	
+//  cajaTextNombres.setAttribute('type', "text");//Asignar el atributo type
+//    cajaTextNombres.setAttribute('name', "nameSend");//Asignar el atributo type
+//    ;
     
-    ticketButton.appendChild(formulario);  
-    formulario.appendChild(cajaTextNombres);//Agregar el objeto caja de texto Nombres al objeto formulario
+//    ticketButton.appendChild(formulario);  
+//    formulario.appendChild(cajaTextNombres);//Agregar el objeto caja de texto Nombres al objeto formulario
     
-	cajaTextNombres.value = "Texto a enviar";
-	formulario.submit();
+//	cajaTextNombres.value = "Texto a enviar";
+//	document.getElementById(formulario).;
+	
+//	formulario.submit(cajaTextNombres);
 //   document.getElementById('nameSend').value = "Texto a enviar"
    
 //    document.formulario.cajaTextNombres.value = "Hola;"
