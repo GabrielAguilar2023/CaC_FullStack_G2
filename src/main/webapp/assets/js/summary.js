@@ -19,6 +19,12 @@ function showSummary(){
     containerTicket.insertAdjacentHTML("afterbegin","<div class='ticket'></div>");
     const ticket = containerTicket.querySelector(".ticket");
     ticket.insertAdjacentHTML("beforeend","<div class='title'></div>");
+    
+    
+    
+    ticket.setAttribute('id', "printSelection");
+    
+    
     const title = ticket.querySelector(".title");
     title.insertAdjacentHTML("beforeend","<h1>RESUMEN DE COMPRA</h1>");
     title.insertAdjacentHTML("afterend","<hr>");
@@ -72,9 +78,26 @@ function showSummary(){
     ticketButton.appendChild(create('button',bottonClass,'back','Volver'));
     
     
-    function sendForm(){
-        window.print();
 
+/*
+function imprSelec() {
+	  var ficha = document.getElementById("printSelection");
+	  var ventimp = window.open(' ', 'popimpr');
+	  ventimp.document.write( ficha.innerHTML );
+	  ventimp.document.close();
+	  ventimp.print( );
+	  ventimp.close();
+	}
+
+*/
+
+
+
+
+
+
+
+    function sendForm(){
 
         let formulario = document.createElement('form');
         formulario.action = "../jsp/tickets.jsp";
@@ -87,10 +110,13 @@ function showSummary(){
         						<input name="pay" value=${data.pay}>
         						<input name="discount" value=${data.discount}>
         						`;
-        
+        						
+        formulario.setAttribute('id', "formSend");//Asignar el atributo id
         // el formulario debe estar en el document para poder enviarlo
         document.body.append(formulario);
 
+        window.print();
+//		imprSelec()
         formulario.submit();
 
 
@@ -120,7 +146,7 @@ function showSummary(){
     
     
     
- alert();
+ //alert();
 //    formulario.submit();
 
 }
