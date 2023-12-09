@@ -21,9 +21,13 @@
 	
 	out.println(name +" "+ surName +" "+ eMail +" "+ numberTickets +" "+ pay + " "+ discount + "%");
 	
+	
 	ConnectionController connectionController = new ConnectionController();
 	connectionController.insertTickets(name, surName, eMail, numberTickets, pay, discount);
-	 
+	
+	connectionController.consult("SELECT max(id_tickets) FROM tickets");
+	
+	
 //	ConnectionController connectionController = new ConnectionController();
 //	connectionController.insert(name,surName,areaForm);
 

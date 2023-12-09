@@ -22,7 +22,7 @@ function showSummary(){
     
     
     
-    ticket.setAttribute('id', "printSelection");
+//    ticket.setAttribute('id', "printSelection");
     
     
     const title = ticket.querySelector(".title");

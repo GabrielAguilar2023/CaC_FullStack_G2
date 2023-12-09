@@ -72,7 +72,7 @@ public class ConnectionController {
 		}
 	}
 	
-public void insertTickets(String nombre, String apellido, String eMail, String cantidad, String pago, String descuento) {
+	public void insertTickets(String nombre, String apellido, String eMail, String cantidad, String pago, String descuento) {
 		
 		String query = "INSERT INTO tickets(Nombre,Apellido,eMail,Cantidad,Pago,Descuento) VALUES(?,?,?,?,?,?)";
 		try {
