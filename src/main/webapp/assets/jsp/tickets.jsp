@@ -6,10 +6,10 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>Pagar tickets</title>
 	</head>
 <body>
-<h1>Tickets.jsp</h1>
+
 <%
 
 	String name = request.getParameter("name");
@@ -17,16 +17,27 @@
 	String eMail = request.getParameter("eMail");
 	String numberTickets = request.getParameter("numberTickets");
 	String pay = request.getParameter("pay");
-	String discount = String.valueOf(((1f - Float.valueOf(request.getParameter("discount")))*100));
+	String discount = String.valueOf( Math.round(((1f - Float.valueOf(request.getParameter("discount")))*100)));
 	
+	out.println(name +" "+ surName +" "+ eMail +" "+ numberTickets +" "+ pay + " "+ discount + "%");
 	
-	out.println(name+" "+ surName +" "+eMail+" "+ numberTickets +" "+ pay + " "+ discount + "%");
+	ConnectionController connectionController = new ConnectionController();
+	connectionController.insertTickets(name, surName, eMail, numberTickets, pay, discount);
 	 
 //	ConnectionController connectionController = new ConnectionController();
 //	connectionController.insert(name,surName,areaForm);
 
 %>
 
-<!-- <jsp:include page="../pages/tickets.html"></jsp:include>  -->
+<script>
+window.onload=function(){
+
+	alert ("Ticket comprado"+"\n" + "Serás contactado por email para confirmarle su ubicación en la sala ");
+	location.href="../../index.html";
+
+}
+</script>
+
+<!-- <jsp:include page="../pages/tickets.html"></jsp:include> -->
 </body>
 </html>

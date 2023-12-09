@@ -29,7 +29,7 @@ public class ConnectionController {
 	Statement statement = null;
 	PreparedStatement preparedStatement =null;
 	
-	public Connection connect() {
+	private Connection connect() {
 	
 		try {	
 			connection = DriverManager.getConnection(URL, USER, PASS);
@@ -55,7 +55,7 @@ public class ConnectionController {
 		return resultSet;		
 	}
 		
-	public void insert(String nombre, String apellido, String issue) {
+	public void insertOradores(String nombre, String apellido, String issue) {
 		
 		String query = "INSERT INTO oradores(Nombre,Apellido,Tema) VALUES(?,?,?)";
 		try {
@@ -71,6 +71,33 @@ public class ConnectionController {
 			e.printStackTrace();
 		}
 	}
+	
+public void insertTickets(String nombre, String apellido, String eMail, String cantidad, String pago, String descuento) {
+		
+		String query = "INSERT INTO tickets(Nombre,Apellido,eMail,Cantidad,Pago,Descuento) VALUES(?,?,?,?,?,?)";
+		try {
+			connectionQuery = connect();
+			preparedStatement = connectionQuery.prepareStatement(query);
+			preparedStatement.setString(1,nombre);
+			preparedStatement.setString(2,apellido);
+			preparedStatement.setString(3,eMail);	
+			preparedStatement.setString(4,cantidad);
+			preparedStatement.setString(5,pago);
+			preparedStatement.setString(6,descuento);	
+			
+			preparedStatement.executeUpdate();
+			close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	
+	
+	
 	
 	public void close()  {
 		try {

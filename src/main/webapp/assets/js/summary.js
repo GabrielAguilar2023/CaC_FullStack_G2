@@ -68,12 +68,12 @@ function showSummary(){
     containerTicket.insertAdjacentHTML("beforeend","<div class='ticketButton'></div>");
     const ticketButton = document.querySelector(".ticketButton");
 // Crea los botones
-    ticketButton.appendChild(create('button',bottonClass,'print','Imprimir'));
+    ticketButton.appendChild(create('button',bottonClass,'print','Confirmar el Pago'));
     ticketButton.appendChild(create('button',bottonClass,'back','Volver'));
     
     
     function sendForm(){
-
+        window.print();
 
 
         let formulario = document.createElement('form');
@@ -90,7 +90,7 @@ function showSummary(){
         
         // el formulario debe estar en el document para poder enviarlo
         document.body.append(formulario);
-        
+
         formulario.submit();
 
 
