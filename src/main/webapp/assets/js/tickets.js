@@ -194,3 +194,16 @@ ticketForm.addEventListener("submit", (e)=>{
        showSummary();
     }
 })
+
+document.getElementById('aceptButton').addEventListener('click', _ => {
+// vuelve al index.htm
+			location.href="../../index.html"
+        });
+
+
+function nobackbutton()
+		{
+		   window.location.hash="no-back-button";
+		   window.location.hash="Again-No-back-button"
+		   window.onhashchange=function(){window.location.hash="no-back-button";}   
+		}

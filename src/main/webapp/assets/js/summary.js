@@ -74,114 +74,37 @@ function showSummary(){
     containerTicket.insertAdjacentHTML("beforeend","<div class='ticketButton'></div>");
     const ticketButton = document.querySelector(".ticketButton");
 // Crea los botones
-    ticketButton.appendChild(create('button',bottonClass,'print','Confirmar el Pago'));
+    ticketButton.appendChild(create('button',bottonClass,'confirm','Confirmar el Pago'));
     ticketButton.appendChild(create('button',bottonClass,'back','Volver'));
-    
-    
-
-/*
-function imprSelec() {
-	  var ficha = document.getElementById("printSelection");
-	  var ventimp = window.open(' ', 'popimpr');
-	  ventimp.document.write( ficha.innerHTML );
-	  ventimp.document.close();
-	  ventimp.print( );
-	  ventimp.close();
-	}
-
-*/
-
-
-
-
-
-
-
+       
     function sendForm(){
-
         let formulario = document.createElement('form');
         formulario.action = "../jsp/tickets.jsp";
         formulario.method = 'GET';
-        
         formulario.innerHTML = `<input name="name" value=${data.name}> 
         						<input name="surName" value=${data.surName}>
         						<input name="eMail" value=${data.eMail}>
         						<input name="numberTickets" value=${data.numberTickets}>
         						<input name="pay" value=${data.pay}>
-        						<input name="discount" value=${data.discount}>
-        						`;
+        						<input name="discount" value=${data.discount}>`;
         						
         formulario.setAttribute('id', "formSend");//Asignar el atributo id
         // el formulario debe estar en el document para poder enviarlo
         document.body.append(formulario);
 
         window.print();
-//		imprSelec()
+        // https://es.stackoverflow.com/questions/245686/deshabilitar-el-back-del-explorador-o-reiniciar-la-p%C3%A1gina-anterior
+        
+        
+        
         formulario.submit();
-
-
-//	let formulario = document.createElement("form");
-//	let cajaTextNombres=document.createElement("input");
-	
-//	formulario.setAttribute('method', "get");//Asignar el atributo method
-//	formulario.setAttribute('action', "../jsp/tickets.jsp");//Asignar el atributo action
-//	formulario.setAttribute('id', "formulario");//Asignar el atributo action
-	
-//  cajaTextNombres.setAttribute('type', "text");//Asignar el atributo type
-//    cajaTextNombres.setAttribute('name', "nameSend");//Asignar el atributo type
-//    ;
-    
-//    ticketButton.appendChild(formulario);  
-//    formulario.appendChild(cajaTextNombres);//Agregar el objeto caja de texto Nombres al objeto formulario
-    
-//	cajaTextNombres.value = "Texto a enviar";
-//	document.getElementById(formulario).;
-	
-//	formulario.submit(cajaTextNombres);
-//   document.getElementById('nameSend').value = "Texto a enviar"
-   
-//    document.formulario.cajaTextNombres.value = "Hola;"
-    
-    
-    
-    
-    
- //alert();
-//    formulario.submit();
-
 }
 
-
-
-
-    
-    
-    
-    
-    
-    
 // Codigo de accion de los botones
     document.getElementById('back').addEventListener('click', _ => {
 // Recarga el codigo HTML original de la pagina
             location.reload(eraseAll);
         });
-        
-        
-        
-    
-    document.getElementById('print').addEventListener('click', _ => {
-
-
-		sendForm();
-
-
-
-
-        // Recarga el codigo HTML original de la pagina
-        			
-        			
-        			//location.href="../jsp/tickets.jsp"
-                   // alert("ACABAS DE PRESIONAR EL BOTON IMPRIMIR \n \n *** SIGUIENTE ETAPA EN CONSTRUCCIóN ***");
-                });
-
+// Envia el formulario a ticket.jsp  
+    document.getElementById('confirm').addEventListener('click', _ => sendForm());
 }
