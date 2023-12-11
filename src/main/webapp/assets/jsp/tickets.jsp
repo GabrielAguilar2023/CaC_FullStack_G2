@@ -36,32 +36,14 @@
 
 	<h1 class="text-center"> Compra de tickets</h1>
 	<br>
-	
 	<p class="text-center"><b>Cuando se acredite su pago</b> será contactado por email para confirmarle su ubicación en la sala</p>
-	
 	<p class="text-center"> Si tiene algun inconveniente con el pago del ticket, comunicarse con 0800-4440-2522 e indique el N° de tramite.</p>
 	<br>
-	<h3 class="text-center"> N° Tramite: <%=tramite %> </h3>			
-	<!-- <button type="reset" class="w-100 btn btn-lg btn-form buttonColor" id="aceptButton">Aceptar</button> -->
+	<h3 class="text-center" id="tramite"> N° Tramite: <%=tramite %> </h3>			
+	<button type="reset" class="w-100 btn btn-lg btn-form buttonColor" id="aceptButton">Salir</button>
 				
-	<script>
-		window.onload=function(){
-		alert ("¡Ticket comprado!... Tome nota del numero de Tramite");
-		
-		//		window.history.back();
-		location.href="../pages/tickets.html";
-	}
-		
-		function nobackbutton()
-		{
-		   window.location.hash="no-back-button";
-		   window.location.hash="Again-No-back-button"
-		   window.onhashchange=function(){window.location.hash="no-back-button";}   
-		}
-	</script>
+				
+				
+	<script src="../js/postickets.js"></script>
 </body>
 </html>
-
-
-
-		<!-- <jsp:include page="../pages/tickets.html"></jsp:include> -->

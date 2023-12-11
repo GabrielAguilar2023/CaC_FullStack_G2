@@ -91,19 +91,14 @@ function showSummary(){
         formulario.setAttribute('id', "formSend");//Asignar el atributo id
         // el formulario debe estar en el document para poder enviarlo
         document.body.append(formulario);
-
         window.print();
-        // https://es.stackoverflow.com/questions/245686/deshabilitar-el-back-del-explorador-o-reiniciar-la-p%C3%A1gina-anterior
-        
-        
-        
         formulario.submit();
 }
 
 // Codigo de accion de los botones
     document.getElementById('back').addEventListener('click', _ => {
 // Recarga el codigo HTML original de la pagina
-            location.reload(eraseAll);
+    location.reload();
         });
 // Envia el formulario a ticket.jsp  
     document.getElementById('confirm').addEventListener('click', _ => sendForm());

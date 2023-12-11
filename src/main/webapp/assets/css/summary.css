@@ -135,7 +135,7 @@ hr{
 /* Evita imprimir los botones en la factura */
 
 @media print {
-#print {display:none;}
+#confirm {display:none;}
 #back {display:none;}
 #formSend {display:none;}
 }

@@ -195,11 +195,6 @@ ticketForm.addEventListener("submit", (e)=>{
     }
 })
 
-document.getElementById('aceptButton').addEventListener('click', _ => {
-// vuelve al index.htm
-			location.href="../../index.html"
-        });
-
 
 function nobackbutton()
 		{
@@ -207,3 +202,4 @@ function nobackbutton()
 		   window.location.hash="Again-No-back-button"
 		   window.onhashchange=function(){window.location.hash="no-back-button";}   
 		}
+//// Esto prueba
