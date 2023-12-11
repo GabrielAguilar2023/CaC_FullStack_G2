@@ -131,3 +131,11 @@ hr{
     padding-right: 0.2rem;
     font-size: 1.5rem;
 }
+
+/* Evita imprimir los botones en la factura */
+
+@media print {
+#confirm {display:none;}
+#back {display:none;}
+#formSend {display:none;}
+}
