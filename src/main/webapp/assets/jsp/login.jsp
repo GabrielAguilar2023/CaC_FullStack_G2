@@ -78,12 +78,12 @@
 					<th class="text-center">Cantidad</th>
 					<th class="text-center">Pago</th>
 					<th class="text-center">Descuento</th>
-					<th class="text-center">Activo</th>
+					<th class="text-center">Pagado</th>
 						
 				</tr>
 					
 				<% while(resultSet.next()){ %>
-				<tr>	
+				<tr class="normal">	
 					<th class="text-center" scope="row" id="<%= resultSet.getInt(1)%>"><%= resultSet.getInt(1)%></th>
 					<td class="text-center"><%= resultSet.getString(2)%></td>
 					<td class="text-center"><%= resultSet.getString(3)%></td>
@@ -91,13 +91,22 @@
 					<td class="text-center"><%= resultSet.getString(5)%></td>
 					<td class="text-center"><%= resultSet.getString(6)%></td>
 					<td class="text-center"><%= resultSet.getString(7)%> %</td>
-					<td class="text-center"><%= resultSet.getBoolean(8)%></td>
+					<td class="text-center"><INPUT type="checkbox"  disabled <% out.println((resultSet.getBoolean(10)?"checked":"unChecked"));%>></td>
+					
+					
+					
 				</tr>
 				<% } 
 				connectionController.close();
 				%>
 			</table>
-<!-- 		----------------------------------  -->
+			
+			
+			<button type="button" class="w-100 btn btn-lg btn-form buttonColor" id="modifyTicketButton" disabled>Modificar ticket seleccionado</button>
+			
+			
+			
+<!-- 	https://es.stackoverflow.com/questions/172279/c%C3%B3mo-pasar-par%C3%A1metros-de-una-fila-de-una-tabla-html-con-jsp 	----------------------------------  -->
 
 
 <%

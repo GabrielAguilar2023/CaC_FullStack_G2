@@ -1,11 +1,22 @@
-const tablaTickets = document.getElementById("listadoTickets")
+const tablaTickets = document.getElementById("listadoTickets");
+const modifyTicketBut = document.getElementById("modifyTicketButton");
 
 tablaTickets.addEventListener("click",ejecutar);
 
 
 function ejecutar(e){
-	let id_tickets = e.target.parentElement.childNodes[1].id;
-	alert(id_tickets);
+	let fila = e.target.parentElement;
+	fila.classList.replace('normal','activa');
+	
+	if(window.activa !== undefined){
+       window.activa.classList.replace('activa', 'normal');
+    }
+       window.activa = event.target.parentElement;
+		
+	let id_tickets = fila.childNodes[1].id;
+	modifyTicketBut.disabled = false;
+	
+//	alert(modifyTicketBut.disabled);
 	
 }
 
