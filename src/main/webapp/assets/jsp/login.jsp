@@ -11,14 +11,13 @@
 	<link rel="stylesheet" href="../css/index.css">
 	<link rel="stylesheet" href="../css/summary.css">
 	
-	
-	<title>Listado de Oradores</title>
+	<title>Listado</title>
 	</head>
 	<body onload="nobackbutton()">
 		
 	
 	<div class="mainProject">
-				<div class="headerProject">
+		<div class="headerProject">
 				<div class="desktop">
 					<div class="menuLeft">
 						<div class="imgLogo"><img src="../img/codoacodo.png" class="imageLogo" alt="logo Codo a Codo">
@@ -61,43 +60,81 @@
 					</div>
 				</div>
 			</div>
-					<div class="container">
+	
+					
+		<div class="container">
 	<%
 	ConnectionController connectionController = new ConnectionController();		
 	ResultSet resultSet =  connectionController.consult("SELECT * FROM tickets WHERE Activo = TRUE");
 	%>
+			<h1 class="text-center mt-5 pt-5 mb-4"> Listado de Tickets </h1>
+	
+			<table id="listadoTickets" class="table table-striped">			
+				<tr>
+					<th class="text-center">Trámite Nº</th>
+					<th class="text-center">Nombre</th>
+					<th class="text-center">Apellido</th>
+					<th class="text-center">Email</th>
+					<th class="text-center">Cantidad</th>
+					<th class="text-center">Pago</th>
+					<th class="text-center">Descuento</th>
+					<th class="text-center">Activo</th>
+						
+				</tr>
+					
+				<% while(resultSet.next()){ %>
+				<tr>	
+					<th class="text-center" scope="row" id="<%= resultSet.getInt(1)%>"><%= resultSet.getInt(1)%></th>
+					<td class="text-center"><%= resultSet.getString(2)%></td>
+					<td class="text-center"><%= resultSet.getString(3)%></td>
+					<td class="text-center"><%= resultSet.getString(4)%></td>
+					<td class="text-center"><%= resultSet.getString(5)%></td>
+					<td class="text-center"><%= resultSet.getString(6)%></td>
+					<td class="text-center"><%= resultSet.getString(7)%> %</td>
+					<td class="text-center"><%= resultSet.getBoolean(8)%></td>
+				</tr>
+				<% } 
+				connectionController.close();
+				%>
+			</table>
+<!-- 		----------------------------------  -->
 
-	<h1 class="text-center mt-5 pt-5 mb-4"> Listado de Oradores </h1>
-	
-	<table class="table table-striped">
-	
-		<tr>
-			<th class="text-center">Trámite Nº</th>
-			<th class="text-center">Cantidad de tickets</th>
-			<th class="text-center">Descuento</th>
-			<th class="text-center">Importe Pagado</th>
-		</tr>
-		
-<% while(resultSet.next()){ %>
-		<tr>	
-			<th class="text-center" scope="row"><%= resultSet.getInt(1)%></th>
-			<td class="text-center"><%= resultSet.getString(5)%></td>
-			<td class="text-center"><%= resultSet.getString(7)%> %</td>
-			<td class="text-center"><%= resultSet.getString(6)%></td>
-		</tr>
 
-<% } %>
-	</table>
+<%
+	ConnectionController connectionController2 = new ConnectionController();		
+	ResultSet resultSet2 =  connectionController2.consult("SELECT * FROM oradores WHERE Activo = TRUE");
+	%>
+			<h1 class="text-center mt-5 pt-5 mb-4"> Listado de Oradores </h1>
 	
-	<br>
+			<table class="table table-striped">			
+				<tr>
+					
+					<th class="text-center">Nombre</th>
+					<th class="text-center">Apellido</th>
+					<th class="text-center">Tema</th>
+				</tr>
+					
+				<% while(resultSet2.next()){ %>
+				<tr>	
+					
+					<td class="text-center"><%= resultSet2.getString(2)%></td>
+					<td class="text-center"><%= resultSet2.getString(3)%></td>
+					<td class="text-center"><%= resultSet2.getString(4)%></td>
+				</tr>
+				<% } 
+				connectionController2.close();
+				%>
+			</table>
+	
+			
+					
+		</div>			
 		
-	<p class="text-center"><b>Cuando se acredite su pago, su Nº de Trámite aparecerá en esta lista</b> y será contactado por email para confirmarle su ubicación en la sala.</p>
-	<p class="text-center"> Si tiene algun inconveniente con el pago del ticket, comunicarse con 0800-4440-2522 e indique el N° de tramite.</p>
-		
+	
 	<button type="reset" class="w-100 btn btn-lg btn-form buttonColor" id="aceptButton">Salir</button>
-				
 	</div>
-</div>			
-	<script src="../js/postickets.js"></script>
+			
+	<!-- <script src="../js/postickets.js"></script> -->
+	<script src="../js/login.js"></script>
 </body>
 </html>
