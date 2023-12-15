@@ -1,18 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
+
+<%@ page import = "controller.ConnectionController" %>
+<%@ page import = "java.sql.ResultSet" %>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Trabajo Integrador: Comprar tickets</title>
-		<link rel="stylesheet" href="../css/bootstrap.min.css">
-		<link rel="stylesheet" href="../css/index.css">
-		<link rel="stylesheet" href="../css/summary.css">
-
-		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+	<meta charset="UTF-8">
+ 
+	<link rel="stylesheet" href="../css/bootstrap.min.css"> 
+	<link rel="stylesheet" href="../css/index.css">
+	<link rel="stylesheet" href="../css/summary.css">
+	
+	<title>Listado</title>
 	</head>
-
-	<body onload="nobackbutton()">
+	
+		<body onload="nobackbutton()">
+<!-- 			<h1 class="text-center mt-5 pt-5 mb-4"> Modificar Tr·mite N∫ <% String name = request.getParameter("id"); out.println(name);	%></h1> -->
 		<div class="mainProject">
 
 			<div class="headerProject">
@@ -29,7 +32,7 @@
 								<a href="../../index.html" class="itemMobile linkMenu">La conferencia</a>
 								<a class="itemMobile linkMenu" href="#">El lugar y la fecha</a>
 								<a class="otro itemMobile linkMenu" href="../../index.html#oradores">Los oradores</a>
-								<a class="itemMobile linkMenu" href="../../index.html#formulario">Convi√©rtete en
+								<a class="itemMobile linkMenu" href="../../index.html#formulario">ConviÈrtete en
 									orador</a>
 								<a href="#" class="itemMobile linkMenu linkM_5">Compar tickets</a>
 							</div>
@@ -37,7 +40,7 @@
 						<a class="linkMenu hideMenu_1" id="linkM_1" href="../../index.html">La conferencia</a>
 						<a class="linkMenu hideMenu_2" id="linkM_2" href="../../index.html#oradores">Los oradores</a>
 						<a class="linkMenu hideMenu_3" id="linkM_1" href="#">El lugar y la fecha</a>
-						<a class="linkMenu hideMenu_4" id="linkM_4" href="../../index.html#formulario">Convi√©rtete en
+						<a class="linkMenu hideMenu_4" id="linkM_4" href="../../index.html#formulario">ConviÈrtete en
 							orador</a>
 						<div class="more">
 							<ul>
@@ -49,7 +52,7 @@
 												oradores</a></li>
 										<li><a class="ItemSubmenu ItemSubmenu_3" href="#">El lugar y la fecha</a></li>
 										<li><a class="ItemSubmenu ItemSubmenu_4"
-												href="../../index.html#formulario">Convi√©rtete en orador</a></li>
+												href="../../index.html#formulario">ConviÈrtete en orador</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -64,46 +67,13 @@
 					<div class="row justify-content-center">
 						<div class="col-lg-8 col-xl-7">
 							<div class="row row-cols-1 row-cols-md-3 text-center">
-								<div class="col">
-									<div class="card1 card mb-4 rounded-3 shadow-sm border-primary">
-										<div class="card-header py-3 text-white bg-primary border-primary">
-											<h4 class="my-0 fw-normal">Estudiante</h4>
-										</div>
-										<div class="card-body">
-											<p>Tienen un descuento</p>
-											<h3 class="card-title pricing-card-title">80%</h3>
-											<small class="fw-light text-muted mt-3">* Presentar documentaci√≥n</small>
-										</div>
-									</div>
-								</div>
-								<div class="col">
-									<div class="card mb-4 rounded-3 shadow-sm border-info">
-										<div class="card-header py-3 text-white bg-info border-info">
-											<h4 class="my-0 fw-normal">Trainee</h4>
-										</div>
-										<div class="card-body">
-											<p>Tienen un descuento</p>
-											<h3 class="card-title pricing-card-title">50%</h3>
-											<small class="fw-light text-muted mt-3">* Presentar documentaci√≥n</small>
-										</div>
-									</div>
-								</div>
-								<div class="col">
-									<div class="card mb-4 rounded-3 shadow-sm border-warning">
-										<div class="card-header py-3 text-white bg-warning border-warning">
-											<h4 class="my-0 fw-normal">Junior</h4>
-										</div>
-										<div class="card-body">
-											<p>Tienen un descuento</p>
-											<h3 class="card-title pricing-card-title">15%</h3>
-											<small class="fw-light text-muted mt-3">* Presentar documentaci√≥n</small>
-										</div>
-									</div>
-								</div>
+								
+								
+
 							</div>
 							<div class="saleText">
-								<h2 class="title">Venta</h2>
-								<p id="ticketValue">VALOR DEL TICKET $200</p>
+							<h1 class="text-center  mb-4"> Modificar Tr·mite N∫ <% String record = request.getParameter("id"); out.println();	%></h1>
+								
 							</div>
 							<form class="ticketForm" id="ticketForm" action="">
 								<div class="row gx-2">
@@ -112,14 +82,14 @@
 											<input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" name="name" id="name" required>
 											<i class="cac validation-name" ></i>	
 										</div>
-										<p class="error error-name">Ingrese Nombre de 2 a 40 caracteres alfab√©ticos</p>
+										<p class="error error-name">Ingrese Nombre de 2 a 40 caracteres alfabÈticos</p>
 									</div>
 									<div class="col-md mb-3">
 										<div class="formInput">
 											<input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" name="surName" id="surName" required>
 											<i class="cac validation-surName" ></i>	
 										</div>
-										<p class="error error-surName">Ingrese Apellido de 2 a 40 caracteres alfab√©ticos</p>
+										<p class="error error-surName">Ingrese Apellido de 2 a 40 caracteres alfabÈticos</p>
 									</div>
 								</div>
 								<div class="row">
@@ -128,7 +98,7 @@
 											<input type="email" class="form-control" placeholder="E-mail" aria-label="eMail" name="eMail" id="eMail" required>
 											<i class="cac validation-eMail" ></i>	
 										</div>
-										<p class="error error-eMail">Ingrese un E-mail v√°lido</p>
+										<p class="error error-eMail">Ingrese un E-mail v·lido</p>
 									</div>	
 								</div>
 								<div class="row gx-2">
@@ -138,11 +108,11 @@
 											<input type="number" class="form-control" placeholder="Cantidad" aria-label="numberTickets" name="numberTickets" id="numberTickets" min="1" required>
 											<i class="cac validation-numberTickets" ></i>	
 										</div>
-										<p class="error error-numberTickets">Ingrese un n√∫mero entero mayor que cero</p>
+										<p class="error error-numberTickets">Ingrese un n˙mero entero mayor que cero</p>
 									</div>
 									<div class="col-md mb-3">
-										<label for="categorySelector" class="form-label">Categor√≠a</label>
-										<select class="form-select" aria-label="Categor√≠a" id="categorySelector">
+										<label for="categorySelector" class="form-label">CategorÌa</label>
+										<select class="form-select" aria-label="CategorÌa" id="categorySelector">
 											<option value = 1 selected>Sin Descuento</option>
 											<option value = 0.20 >Estudiante</option>
 											<option value = 0.50 >Trainee</option>
@@ -151,7 +121,7 @@
 									</div>
 								</div>
 								<div id="showTotal" class="alert alert-primary mt-2 mb-4" role="alert">Total a pagar:</div>
-								<div id="showWarning" class="alert alert-danger fst-italic mb-4" role="alert"> <i class="cac cac-warning"></i> Verifique que todos los datos cargados tengan un t√≠lde verde en el extremo derecho.</div>
+								<div id="showWarning" class="alert alert-danger fst-italic mb-4" role="alert"> <i class="cac cac-warning"></i> Verifique que todos los datos cargados tengan un tÌlde verde en el extremo derecho.</div>
 								<div class="row gx-2 mb-2">
 									<div class="col-md mb-3">
 										<button type="reset" class="w-100 btn btn-lg btn-form buttonColor" id="borrarButton">Borrar</button>
@@ -192,7 +162,7 @@
 					<li>
 						<a href="#" class="linkFooter" id="linkF_2">
 							<p> Contactenos</p>
-							<div><span class="cac cac-contact imgFooter" title="Cont√°ctenos" ></span></div>
+							<div><span class="cac cac-contact imgFooter" title="Cont·ctenos" ></span></div>
 						</a>
 					</li>
 					<li>
@@ -209,8 +179,8 @@
 					</li>
 					<li>
 						<a href="#" class="linkFooter" id="linkF_5">
-							<p>T√©rminos y condiciones</p>
-							<div><span class="cac cac-terms imgFooter" title="T√©rminos y Condiciones"></span></div>
+							<p>TÈrminos y condiciones</p>
+							<div><span class="cac cac-terms imgFooter" title="TÈrminos y Condiciones"></span></div>
 						</a>
 					</li>
 					<li>
@@ -234,5 +204,6 @@
 		<script src="../js/summary.js"></script>
 
 	</body>
-
+	
+	
 </html>

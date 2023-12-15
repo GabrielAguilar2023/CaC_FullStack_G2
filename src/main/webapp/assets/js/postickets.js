@@ -9,7 +9,7 @@ function nobackbutton()
 
  document.getElementById('aceptButton').addEventListener('click', _ => {
 // Recarga el codigo HTML original de la pagina
-     location.href="../../index.html"
+     location.href="../pages/tickets.html"
         });
 /*
 	window.onload =function(){

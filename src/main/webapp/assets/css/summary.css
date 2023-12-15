@@ -135,7 +135,19 @@ hr{
 /* Evita imprimir los botones en la factura */
 
 @media print {
-#confirm {display:none;}
-#back {display:none;}
-#formSend {display:none;}
+	#confirm {display:none;}
+	#back {display:none;}
+	#formSend {display:none;}
 }
+
+
+/* Seleccion de filas de las tablas*/
+.activa{
+	
+	background: gray;
+	color:white
+  }
+  
+  .normal{
+  	background: white
+  }
