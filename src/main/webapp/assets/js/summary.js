@@ -19,12 +19,9 @@ function showSummary(){
     containerTicket.insertAdjacentHTML("afterbegin","<div class='ticket'></div>");
     const ticket = containerTicket.querySelector(".ticket");
     ticket.insertAdjacentHTML("beforeend","<div class='title'></div>");
-    
-    
-    
+       
 //    ticket.setAttribute('id', "printSelection");
-    
-    
+     
     const title = ticket.querySelector(".title");
     title.insertAdjacentHTML("beforeend","<h1>RESUMEN DE COMPRA</h1>");
     title.insertAdjacentHTML("afterend","<hr>");

@@ -1,8 +1,8 @@
 const tablaTickets = document.getElementById("listadoTickets");
 const modifyTicketBut = document.getElementById("modifyTicketButton");
+let seleccionado;
 
 tablaTickets.addEventListener("click",ejecutar);
-
 
 function ejecutar(e){
 	let fila = e.target.parentElement;
@@ -13,20 +13,12 @@ function ejecutar(e){
     }
        window.activa = event.target.parentElement;
 		
-	let id_tickets = fila.childNodes[1].id;
+	seleccionado = fila.childNodes[1].id;
 	modifyTicketBut.disabled = false;
 	
-//	alert(modifyTicketBut.disabled);
-	
-}
+	}
 
-
-
-
-
-
-
-
-
-
-// let tabla = document.getElementById("listadoTickets").childNodes[1].childNodes[2].childNodes[1].id
+modifyTicketBut.addEventListener('click', _ => {
+// Llama al proceso de modificacion del registro seleccionado
+     location.href=`modifyTicket.jsp?id=${seleccionado}`
+        });
