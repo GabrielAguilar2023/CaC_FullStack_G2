@@ -64,7 +64,7 @@ CREATE TABLE `tickets` (
   `Fecha` date DEFAULT NULL,
   `Pagado` bit(1) DEFAULT b'0',
   PRIMARY KEY (`id_tickets`)
-) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +73,7 @@ CREATE TABLE `tickets` (
 
 LOCK TABLES `tickets` WRITE;
 /*!40000 ALTER TABLE `tickets` DISABLE KEYS */;
-INSERT INTO `tickets` VALUES (00005,'Genaro','Molina','genaro324@gsa.com','3','120','80',_binary '',NULL,_binary ''),(00006,'Genaro','Molina','genaro324@gsa.com','3','120','80',_binary '\0',NULL,_binary '\0'),(00055,'fghjsdkfs','werwer','werwqe@ewr.ewwe','3','120','80',_binary '',NULL,_binary '\0'),(00089,'Daniel','Villada','daniel@gmail.com','6','240','80',_binary '',NULL,_binary '\0');
+INSERT INTO `tickets` VALUES (00005,'Genaro','Molina','genaro324@gsa.com','3','120','80',_binary '',NULL,_binary ''),(00006,'Genaro','Molina','genaro324@gsa.com','3','120','80',_binary '\0',NULL,_binary '\0'),(00055,'Gerardo Gabriel','Aguilar','gabrielaguilar@hotmail.com.ar','3','120','80',_binary '',NULL,_binary '\0'),(00089,'Daniel','Villada','daniel@gmail.com','6','240','80',_binary '',NULL,_binary ''),(00090,'Matias','Gonzalez','matiasGonza6545@gmail.com','2','200','50',_binary '',NULL,_binary ''),(00091,'Miguel','Suarez','miguesuarez3545@gmail.com','5','500','50',_binary '',NULL,_binary '\0'),(00092,'Paola','Ceballos','paoce4356@jm.com','5','850','15',_binary '',NULL,_binary ''),(00093,'sdfslkdf','werelk','werwerwe@dfsadjk.ds','4','680','15',_binary '\0',NULL,_binary '\0');
 /*!40000 ALTER TABLE `tickets` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -86,4 +86,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-14 20:40:05
+-- Dump completed on 2023-12-16  5:18:44

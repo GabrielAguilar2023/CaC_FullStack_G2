@@ -92,9 +92,7 @@
 					<td class="text-center"><%= resultSet.getString(6)%></td>
 					<td class="text-center"><%= resultSet.getString(7)%> %</td>
 					<td class="text-center"><INPUT type="checkbox"  disabled <% out.println((resultSet.getBoolean(10)?"checked":"unChecked"));%>></td>
-					
-					
-					
+									
 				</tr>
 				<% } 
 				connectionController.close();

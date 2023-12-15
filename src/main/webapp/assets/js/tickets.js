@@ -17,6 +17,8 @@ const showtotal = document.getElementById('showTotal');
 const ticketForm = document.querySelector(".ticketForm");
 const inputs = document.querySelectorAll(".ticketForm input");
 
+
+
 document.getElementById('listButton').addEventListener('click', _ => {
 // Recarga el codigo HTML original de la pagina
     location.href="../jsp/listTickets.jsp"
