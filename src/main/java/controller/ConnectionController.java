@@ -93,16 +93,18 @@ public class ConnectionController {
 		}
 	}
 	
-public void modifyTickets(int id, String nombre, String apellido, String eMail) {
+public void modifyTickets(int id, String nombre, String apellido, String eMail, Boolean activo, Boolean pagado ) {
 	// UPDATE `base_oradores`.`tickets` SET `Nombre` = 'Miguel', `Apellido` = 'Suarez', `eMail` = 'miguesuarez3545@gmail.com', `Cantidad` = '5', `Pago` = '500', `Descuento` = '50', `Activo` = FALSE, `Pagado` = FALSE WHERE (`id_tickets` = '00091');
-		String query = "UPDATE tickets SET Nombre=?, Apellido =?, eMail =? WHERE (id_tickets =?)"; 
+		String query = "UPDATE tickets SET Nombre=?, Apellido =?, eMail =?, Activo=?, Pagado=? WHERE (id_tickets =?)"; 
 		try {
 			connectionQuery = connect();
 			preparedStatement = connectionQuery.prepareStatement(query);
 			preparedStatement.setString(1,nombre);
 			preparedStatement.setString(2,apellido);
 			preparedStatement.setString(3,eMail);	
-			preparedStatement.setInt(4,id);
+			preparedStatement.setBoolean(4,activo);	
+			preparedStatement.setBoolean(5,pagado);		
+			preparedStatement.setInt(6,id);
 			
 			
 			preparedStatement.executeUpdate();

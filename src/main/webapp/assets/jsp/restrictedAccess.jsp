@@ -65,7 +65,8 @@
 		<div class="container">
 	<%
 	ConnectionController connectionController = new ConnectionController();		
-	ResultSet resultSet =  connectionController.consult("SELECT * FROM tickets WHERE Activo = TRUE");
+//	ResultSet resultSet =  connectionController.consult("SELECT * FROM tickets WHERE Activo = TRUE");
+	ResultSet resultSet =  connectionController.consult("SELECT * FROM tickets");
 	%>
 			<h1 class="text-center mt-5 pt-5 mb-4"> Listado de Tickets </h1>
 	
@@ -78,10 +79,10 @@
 					<th class="text-center">Cantidad</th>
 					<th class="text-center">Pago</th>
 					<th class="text-center">Descuento</th>
+					<th class="text-center">Activo</th>
 					<th class="text-center">Pagado</th>
-						
 				</tr>
-					
+				
 				<% while(resultSet.next()){ %>
 				<tr class="normal">	
 					<th class="text-center" scope="row" id="<%= resultSet.getInt(1)%>"><%= resultSet.getInt(1)%></th>
@@ -91,39 +92,34 @@
 					<td class="text-center"><%= resultSet.getString(5)%></td>
 					<td class="text-center"><%= resultSet.getString(6)%></td>
 					<td class="text-center"><%= resultSet.getString(7)%> %</td>
-					<td class="text-center"><INPUT type="checkbox"  disabled <% out.println((resultSet.getBoolean(10)?"checked":"unChecked"));%>></td>
-									
+					<td class="text-center"><INPUT type="checkbox"  disabled <% out.println((resultSet.getBoolean(8)?"checked":"unChecked"));%>></td>								
+					<td class="text-center"><INPUT type="checkbox"  disabled <% out.println((resultSet.getBoolean(10)?"checked":"unChecked"));%>></td>								
 				</tr>
 				<% } 
 				connectionController.close();
 				%>
 			</table>
-			
-			
+						
 			<button type="button" class="w-100 btn btn-lg btn-form buttonColor" id="modifyTicketButton" disabled>Modificar ticket seleccionado</button>
-			
-			
-			
+									
 <!-- 	https://es.stackoverflow.com/questions/172279/c%C3%B3mo-pasar-par%C3%A1metros-de-una-fila-de-una-tabla-html-con-jsp 	----------------------------------  -->
 
-
 <%
-	ConnectionController connectionController2 = new ConnectionController();		
+	ConnectionController connectionController2 = new ConnectionController();
+
 	ResultSet resultSet2 =  connectionController2.consult("SELECT * FROM oradores WHERE Activo = TRUE");
 	%>
 			<h1 class="text-center mt-5 pt-5 mb-4"> Listado de Oradores </h1>
 	
 			<table class="table table-striped">			
-				<tr>
-					
+				<tr>					
 					<th class="text-center">Nombre</th>
 					<th class="text-center">Apellido</th>
 					<th class="text-center">Tema</th>
 				</tr>
 					
 				<% while(resultSet2.next()){ %>
-				<tr>	
-					
+				<tr>					
 					<td class="text-center"><%= resultSet2.getString(2)%></td>
 					<td class="text-center"><%= resultSet2.getString(3)%></td>
 					<td class="text-center"><%= resultSet2.getString(4)%></td>
@@ -135,11 +131,9 @@
 	
 		</div>			
 		
-	
 	<button type="reset" class="w-100 btn btn-lg btn-form buttonColor" id="aceptButton">Salir</button>
 	</div>
 			
-	<!-- <script src="../js/postickets.js"></script> -->
-	<script src="../js/login.js"></script>
+	<script src="../js/restrictedAccess.js"></script>
 </body>
 </html>
