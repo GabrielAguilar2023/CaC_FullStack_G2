@@ -60,8 +60,7 @@
 					</div>
 				</div>
 			</div>
-	
-					
+				
 		<div class="container">
 	<%
 	ConnectionController connectionController = new ConnectionController();		

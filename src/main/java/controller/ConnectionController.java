@@ -115,6 +115,26 @@ public void modifyTickets(int id, String nombre, String apellido, String eMail, 
 		}
 	}
 	
+
+public boolean login(String usuario, String password)  {
+	String query = "select *from usuarios where ((Nombre = ? or eMail = ?) and Password = ?)and Activo = TRUE";
+	try {
+		connectionQuery = connect();
+		preparedStatement = connectionQuery.prepareStatement(query);
+		preparedStatement.setString(1,usuario);
+		preparedStatement.setString(2,usuario);
+		preparedStatement.setString(3,password);	
+		
+		
+		return preparedStatement.executeQuery().next();
+		
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		return false;
+		
+	}		
+}
 	
 	
 	
