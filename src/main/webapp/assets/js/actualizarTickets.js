@@ -1,3 +1,3 @@
 window.onload =function(){
-			location.href="login.jsp";
+			location.href="restrictedAccess.jsp";
 	}
