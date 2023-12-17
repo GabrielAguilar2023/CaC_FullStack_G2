@@ -75,7 +75,9 @@
 			<th class="text-center">Trámite Nº</th>
 			<th class="text-center">Cantidad de tickets</th>
 			<th class="text-center">Descuento</th>
-			<th class="text-center">Importe Pagado</th>
+			<th class="text-center">Importe</th>
+			<th class="text-center">Pagado</th>
+			
 		</tr>
 		
 <% while(resultSet.next()){ %>
@@ -83,7 +85,8 @@
 			<th class="text-center" scope="row"><%= resultSet.getInt(1)%></th>
 			<td class="text-center"><%= resultSet.getString(5)%></td>
 			<td class="text-center"><%= resultSet.getString(7)%> %</td>
-			<td class="text-center"><%= resultSet.getString(6)%></td>
+			<td class="text-center"><%= resultSet.getString(6)%> $</td>
+			<td class="text-center"><INPUT type="checkbox"  disabled <% out.println((resultSet.getBoolean(10)?"checked":"unChecked"));%>></td>
 		</tr>
 
 <% } %>

@@ -9,7 +9,7 @@ const saveButton = document.getElementById("saveButton");
 
 cancelButton.addEventListener('click', _ => {
 // Recarga la pagina que lo llamó descartando los cambios
-    location.href="../jsp/login.jsp"
+    location.href="../jsp/restrictedAccess.jsp"
 });
 
 saveButton.addEventListener('click', _ => {

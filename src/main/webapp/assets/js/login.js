@@ -1,24 +1,20 @@
-const tablaTickets = document.getElementById("listadoTickets");
-const modifyTicketBut = document.getElementById("modifyTicketButton");
-let seleccionado;
+const permiso = document.getElementById("permiso");
 
-tablaTickets.addEventListener("click",ejecutar);
 
-function ejecutar(e){
-	let fila = e.target.parentElement;
-	fila.classList.replace('normal','activa');
-	
-	if(window.activa !== undefined){
-       window.activa.classList.replace('activa', 'normal');
-    }
-       window.activa = event.target.parentElement;
+window.onload=function(){
+if (permiso.innerText=="true"){
+	location.href="restrictedAccess.jsp";
+	}else{
+	location.href="../pages/login.html?response=false";
 		
-	seleccionado = fila.childNodes[1].id;
-	modifyTicketBut.disabled = false;
-	
 	}
+};
 
-modifyTicketBut.addEventListener('click', _ => {
-// Llama al proceso de modificacion del registro seleccionado
-     location.href=`modifyTicket.jsp?id=${seleccionado}`
-        });
+function nobackbutton()
+		{
+		   window.location.hash="no-back-button";
+		   window.location.hash="Again-No-back-button"
+		   window.onhashchange=function(){window.location.hash="no-back-button";}   
+		}
+
+	
