@@ -17,6 +17,16 @@ const showtotal = document.getElementById('showTotal');
 const ticketForm = document.querySelector(".ticketForm");
 const inputs = document.querySelectorAll(".ticketForm input");
 
+
+
+document.getElementById('listButton').addEventListener('click', _ => {
+// Recarga el codigo HTML original de la pagina
+    location.href="../jsp/listTickets.jsp"
+        });
+
+
+
+
 // Escucha a cada evento sobre los inputs
 inputs.forEach((input) => {
     input.addEventListener('keyup', validateForm);
@@ -194,3 +204,10 @@ ticketForm.addEventListener("submit", (e)=>{
        showSummary();
     }
 })
+
+function nobackbutton()
+		{
+		   window.location.hash="no-back-button";
+		   window.location.hash="Again-No-back-button"
+		   window.onhashchange=function(){window.location.hash="no-back-button";}   
+		}

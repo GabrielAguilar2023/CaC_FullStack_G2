@@ -6,7 +6,7 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>Agregar Orador</title>
 	</head>
 <body>
 
@@ -17,11 +17,18 @@
 	String areaForm = request.getParameter("areaForm");
 	 
 	ConnectionController connectionController = new ConnectionController();
-	connectionController.insert(name,surName,areaForm);
+	connectionController.insertOradores(name,surName,areaForm);
 	
-
 %>
 
-<!-- <jsp:include page="../pages/tickets.html"></jsp:include>  -->
+<script>
+window.onload=function(){
+	 
+	alert ("Orador agregado"+"\n" + "Serás contactado por email para coordinar la presentación.");
+	location.href="../../index.html#formulario";
+
+}
+</script>
+
 </body>
 </html>

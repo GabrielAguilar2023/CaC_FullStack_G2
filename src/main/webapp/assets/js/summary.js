@@ -19,6 +19,9 @@ function showSummary(){
     containerTicket.insertAdjacentHTML("afterbegin","<div class='ticket'></div>");
     const ticket = containerTicket.querySelector(".ticket");
     ticket.insertAdjacentHTML("beforeend","<div class='title'></div>");
+       
+//    ticket.setAttribute('id', "printSelection");
+     
     const title = ticket.querySelector(".title");
     title.insertAdjacentHTML("beforeend","<h1>RESUMEN DE COMPRA</h1>");
     title.insertAdjacentHTML("afterend","<hr>");
@@ -68,72 +71,32 @@ function showSummary(){
     containerTicket.insertAdjacentHTML("beforeend","<div class='ticketButton'></div>");
     const ticketButton = document.querySelector(".ticketButton");
 // Crea los botones
-    ticketButton.appendChild(create('button',bottonClass,'print','Imprimir'));
+    ticketButton.appendChild(create('button',bottonClass,'confirm','Aceptar'));
     ticketButton.appendChild(create('button',bottonClass,'back','Volver'));
-    
-    
+       
     function sendForm(){
-
-
-
-	let formulario = document.createElement("form");
-	let cajaTextNombres=document.createElement("input");
-	
-	formulario.setAttribute('method', "post");//Asignar el atributo method
-	formulario.setAttribute('action', "../jsp/tickets.jsp");//Asignar el atributo action
-    cajaTextNombres.setAttribute('type', "text");//Asignar el atributo type
-    cajaTextNombres.setAttribute('name', "nameSend");//Asignar el atributo type
-    ;
-    
-    ticketButton.appendChild(formulario);  
-    formulario.appendChild(cajaTextNombres);//Agregar el objeto caja de texto Nombres al objeto formulario
-    
-	cajaTextNombres.value = "Texto a enviar";
-	formulario.submit();
-//   document.getElementById('nameSend').value = "Texto a enviar"
-   
-//    document.formulario.cajaTextNombres.value = "Hola;"
-    
-    
-    
-    
-    
- alert();
-//    formulario.submit();
-
+        let formulario = document.createElement('form');
+        formulario.action = "../jsp/tickets.jsp";
+        formulario.method = 'GET';
+        formulario.innerHTML = `<input name="name" value=${data.name}> 
+        						<input name="surName" value=${data.surName}>
+        						<input name="eMail" value=${data.eMail}>
+        						<input name="numberTickets" value=${data.numberTickets}>
+        						<input name="pay" value=${data.pay}>
+        						<input name="discount" value=${data.discount}>`;
+        						
+        formulario.setAttribute('id', "formSend");//Asignar el atributo id
+        // el formulario debe estar en el document para poder enviarlo
+        document.body.append(formulario);
+        window.print();
+        formulario.submit();
 }
 
-
-
-
-    
-    
-    
-    
-    
-    
 // Codigo de accion de los botones
     document.getElementById('back').addEventListener('click', _ => {
 // Recarga el codigo HTML original de la pagina
-            location.reload(eraseAll);
+    location.reload();
         });
-        
-        
-        
-    
-    document.getElementById('print').addEventListener('click', _ => {
-
-
-		sendForm();
-
-
-
-
-        // Recarga el codigo HTML original de la pagina
-        			
-        			
-        			//location.href="../jsp/tickets.jsp"
-                   // alert("ACABAS DE PRESIONAR EL BOTON IMPRIMIR \n \n *** SIGUIENTE ETAPA EN CONSTRUCCIóN ***");
-                });
-
+// Envia el formulario a ticket.jsp  
+    document.getElementById('confirm').addEventListener('click', _ => sendForm());
 }

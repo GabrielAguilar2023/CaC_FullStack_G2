@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Comprar tickets</title>
+		<title>Trabajo Integrador: Comprar tickets</title>
 		<link rel="stylesheet" href="../css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/index.css">
 		<link rel="stylesheet" href="../css/summary.css">
@@ -31,7 +31,7 @@
 								<a class="otro itemMobile linkMenu" href="../../index.html#oradores">Los oradores</a>
 								<a class="itemMobile linkMenu" href="../../index.html#formulario">Conviértete en
 									orador</a>
-								<a href="#" class="itemMobile linkMenu linkM_5">Compar tickets</a>
+								<a class="itemMobile linkMenu linkM_5" href="tickets.html">Compar tickets</a>
 							</div>
 						</div>
 						<a class="linkMenu hideMenu_1" id="linkM_1" href="../../index.html">La conferencia</a>
@@ -54,7 +54,7 @@
 								</li>
 							</ul>
 						</div>
-						<a class="linkMenu hide3 linkM_5" href="#">Comprar tickets</a>
+						<a class="linkMenu hide3 linkM_5" href="tickets.html">Comprar tickets</a>
 					</div>
 				</div>
 			</div>
@@ -64,117 +64,46 @@
 					<div class="row justify-content-center">
 						<div class="col-lg-8 col-xl-7">
 							<div class="row row-cols-1 row-cols-md-3 text-center">
-								<div class="col">
-									<div class="card1 card mb-4 rounded-3 shadow-sm border-primary">
-										<div class="card-header py-3 text-white bg-primary border-primary">
-											<h4 class="my-0 fw-normal">Estudiante</h4>
-										</div>
-										<div class="card-body">
-											<p>Tienen un descuento</p>
-											<h3 class="card-title pricing-card-title">80%</h3>
-											<small class="fw-light text-muted mt-3">* Presentar documentación</small>
-										</div>
-									</div>
-								</div>
-								<div class="col">
-									<div class="card mb-4 rounded-3 shadow-sm border-info">
-										<div class="card-header py-3 text-white bg-info border-info">
-											<h4 class="my-0 fw-normal">Trainee</h4>
-										</div>
-										<div class="card-body">
-											<p>Tienen un descuento</p>
-											<h3 class="card-title pricing-card-title">50%</h3>
-											<small class="fw-light text-muted mt-3">* Presentar documentación</small>
-										</div>
-									</div>
-								</div>
-								<div class="col">
-									<div class="card mb-4 rounded-3 shadow-sm border-warning">
-										<div class="card-header py-3 text-white bg-warning border-warning">
-											<h4 class="my-0 fw-normal">Junior</h4>
-										</div>
-										<div class="card-body">
-											<p>Tienen un descuento</p>
-											<h3 class="card-title pricing-card-title">15%</h3>
-											<small class="fw-light text-muted mt-3">* Presentar documentación</small>
-										</div>
-									</div>
-								</div>
+															
 							</div>
 							<div class="saleText">
-								<h2 class="title">Venta</h2>
-								<p id="ticketValue">VALOR DEL TICKET $200</p>
+								
+								<p id="ticketValue">Inicio de sesión</p>
 							</div>
-							<form class="ticketForm" id="ticketForm" action="">
-								<div class="row gx-2">
-									<div class="col-md mb-3">
-										<div class="formInput">
-											<input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" name="name" id="name" required>
-											<i class="cac validation-name" ></i>	
-										</div>
-										<p class="error error-name">Ingrese Nombre de 2 a 40 caracteres alfabéticos</p>
-									</div>
-									<div class="col-md mb-3">
-										<div class="formInput">
-											<input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" name="surName" id="surName" required>
-											<i class="cac validation-surName" ></i>	
-										</div>
-										<p class="error error-surName">Ingrese Apellido de 2 a 40 caracteres alfabéticos</p>
-									</div>
-								</div>
+							<form class="ticketForm" id="ticketForm" action="../jsp/login.jsp">
+					
 								<div class="row">
 									<div class="col-md mb-3">
+										<label for="usuario" class="form-label">Usuario o E-mail</label>
 										<div class="formInput">
-											<input type="email" class="form-control" placeholder="E-mail" aria-label="eMail" name="eMail" id="eMail" required>
+											<input type="text" class="form-control"  aria-label="usuario" name="usuario" id="usuario" required>
 											<i class="cac validation-eMail" ></i>	
 										</div>
 										<p class="error error-eMail">Ingrese un E-mail válido</p>
 									</div>	
 								</div>
-								<div class="row gx-2">
+								
+								<div class="row">
 									<div class="col-md mb-3">
-										<label for="numberTickets" class="form-label">Cantidad</label>
+									<label for="password" class="form-label">Contraseña</label>
 										<div class="formInput">
-											<input type="number" class="form-control" placeholder="Cantidad" aria-label="numberTickets" name="numberTickets" id="numberTickets" min="1" required>
-											<i class="cac validation-numberTickets" ></i>	
+											<input type="password" class="form-control"  aria-label="password" name="password" id="password" required>
+											<i class="cac validation-eMail" ></i>	
 										</div>
-										<p class="error error-numberTickets">Ingrese un número entero mayor que cero</p>
-									</div>
-									<div class="col-md mb-3">
-										<label for="categorySelector" class="form-label">Categoría</label>
-										<select class="form-select" aria-label="Categoría" id="categorySelector">
-											<option value = 1 selected>Sin Descuento</option>
-											<option value = 0.20 >Estudiante</option>
-											<option value = 0.50 >Trainee</option>
-											<option value = 0.85 >Junior</option>
-										</select>
-									</div>
+										<p class="error error-eMail">Ingrese una contraseña valida</p>
+									</div>	
 								</div>
-								<div id="showTotal" class="alert alert-primary mt-2 mb-4" role="alert">Total a pagar:</div>
-								<div id="showWarning" class="alert alert-danger fst-italic mb-4" role="alert"> <i class="cac cac-warning"></i> Verifique que todos los datos cargados tengan un tílde verde en el extremo derecho.</div>
+								
+								
+								
 								<div class="row gx-2 mb-2">
+									
 									<div class="col-md mb-3">
-										<button type="reset" class="w-100 btn btn-lg btn-form buttonColor" id="borrarButton">Borrar</button>
-									</div>
-									<div class="col-md mb-3">
-										<button type="submit" class="w-100 btn btn-lg btn-form buttonColor" id="resumenButton">Resumen</button>
+										<button type="submit" class="w-100 btn btn-lg btn-form buttonColor" id="resumenButton">Ingresar</button>
 									</div>
 								</div>
 								
 							</form>
-								
-								
-								<div class="row gx-2 mb-2">
-									<div class="col-md mb-3">
-										<button type="button" class="w-100 btn btn-lg btn-form buttonColor" id="listButton">Listado de tickets vendidos</button>
-									</div>
-								</div>
-								
-								
-								
-								
-								
-								
 								
 						</div>
 					</div>
@@ -226,13 +155,8 @@
 						</a>
 					</li>
 				</ul>
-			</div>
-			
+			</div>	
 		</div>
 		<script src="../js/bootstrap.bundle.min.js"></script>
-		<script src="../js/tickets.js"></script>
-		<script src="../js/summary.js"></script>
-
 	</body>
-
 </html>

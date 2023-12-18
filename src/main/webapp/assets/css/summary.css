@@ -131,3 +131,23 @@ hr{
     padding-right: 0.2rem;
     font-size: 1.5rem;
 }
+
+/* Evita imprimir los botones en la factura */
+
+@media print {
+	#confirm {display:none;}
+	#back {display:none;}
+	#formSend {display:none;}
+}
+
+
+/* Seleccion de filas de las tablas*/
+.activa{
+	
+	background: gray;
+	color:white
+  }
+  
+  .normal{
+  	background: white
+  }
