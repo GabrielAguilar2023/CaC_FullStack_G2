@@ -32,7 +32,7 @@ CREATE TABLE `oradores` (
   `Activo` bit(1) DEFAULT b'0',
   `Fecha` date DEFAULT NULL,
   PRIMARY KEY (`id_oradores`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `oradores` (
 
 LOCK TABLES `oradores` WRITE;
 /*!40000 ALTER TABLE `oradores` DISABLE KEYS */;
-INSERT INTO `oradores` VALUES (0000000001,'Bill','Gates','Cambio Climatico',_binary '',NULL),(0000000002,'Ada','Lovelace','Geometría Analítica',_binary '',NULL),(0000000003,'Manuel','Quintana','.Net',_binary '\0',NULL),(0000000011,'Matias','Torres','Espacios virtuales',_binary '\0',NULL),(0000000012,'Marisa','Pereyra','Calentamiento global',_binary '\0',NULL),(0000000013,'Anahí','Sosa','Introducción',_binary '\0',NULL),(0000000014,'Javier','Melonni','Redes informaticas',_binary '\0',NULL),(0000000015,'Daniela','Martins','Matematicas Avanzadas',_binary '\0',NULL),(0000000016,'Isabel','Rodriguez','Politica Internacional',_binary '\0',NULL),(0000000017,'Carolina','Gomez','Reforma Institucional',_binary '\0',NULL),(0000000018,'Daniel','Morales','Reforma del Estado',_binary '\0',NULL),(0000000019,'Juan','Cruz','Otro tema',_binary '\0',NULL),(0000000028,'Esther','Lopez','Informatica Electoral',_binary '\0',NULL),(0000000029,'Miguel','Cervantes','Cultura Clasica',_binary '\0',NULL),(0000000030,'Carlos','Echepare','Manejo de Bases de Datos',_binary '\0',NULL),(0000000032,'Edith','Bustos','Cocina Oriental',_binary '\0',NULL);
+INSERT INTO `oradores` VALUES (0000000001,'Bill','Gates','Cambio Climatico',_binary '',NULL),(0000000002,'Ada','Lovelace','Geometría Analítica',_binary '',NULL),(0000000003,'Manuel','Quintana','.Net',_binary '\0',NULL),(0000000011,'Matias','Torres','Espacios virtuales',_binary '\0',NULL),(0000000012,'Marisa','Pereyra','Calentamiento global',_binary '\0',NULL),(0000000013,'Anahí','Sosa','Introducción',_binary '\0',NULL),(0000000014,'Javier','Melonni','Redes informaticas',_binary '\0',NULL),(0000000015,'Daniela','Martins','Matematicas Avanzadas',_binary '\0',NULL),(0000000016,'Isabel','Rodriguez','Politica Internacional',_binary '\0',NULL),(0000000017,'Carolina','Gomez','Reforma Institucional',_binary '\0',NULL),(0000000018,'Daniel','Morales','Reforma del Estado',_binary '\0',NULL),(0000000019,'Juan','Cruz','Otro tema',_binary '\0',NULL),(0000000028,'Esther','Lopez','Informatica Electoral',_binary '\0',NULL),(0000000029,'Miguel','Cervantes','Cultura Clasica',_binary '\0',NULL),(0000000030,'Carlos','Echepare','Manejo de Bases de Datos',_binary '\0',NULL),(0000000032,'Edith','Bustos','Cocina Oriental',_binary '\0',NULL),(0000000051,'Gabriela','Quinteros','Seguridad Vial',_binary '\0',NULL);
 /*!40000 ALTER TABLE `oradores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,7 +64,7 @@ CREATE TABLE `tickets` (
   `Fecha` date DEFAULT NULL,
   `Pagado` bit(1) DEFAULT b'0',
   PRIMARY KEY (`id_tickets`)
-) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=123 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +73,7 @@ CREATE TABLE `tickets` (
 
 LOCK TABLES `tickets` WRITE;
 /*!40000 ALTER TABLE `tickets` DISABLE KEYS */;
-INSERT INTO `tickets` VALUES (00005,'Genaro','Molina','genaro324@gsa.com','3','120','80',_binary '',NULL,_binary ''),(00006,'Damian','Lopez','dami@nlopez.com','3','120','80',_binary '',NULL,_binary ''),(00055,'Gerardo Gabriel','Aguilar','gabrielaguilar@hotmail.com.ar','3','120','80',_binary '',NULL,_binary '\0'),(00089,'Daniel','Villada','daniel@gmail.com','6','240','80',_binary '',NULL,_binary ''),(00090,'Matias','Gonzalez','matiasGonza6545@gmail.com','2','200','50',_binary '',NULL,_binary ''),(00091,'Miguel','Suarez','miguesuarez3545@gmail.com','5','500','50',_binary '',NULL,_binary '\0'),(00092,'Paola','Ceballos','paoce4356@jm.com','5','850','15',_binary '',NULL,_binary ''),(00093,'sdfslkdf','werelk','werwerwe@dfsadjk.ds','4','680','15',_binary '\0',NULL,_binary '\0'),(00094,'Gabriel','Aguilar','gabrielaguilar@hotmail.com.ar','3','510','15',_binary '',NULL,_binary '\0'),(00095,'Miguel','Cervantes','strange21234@psn.com','3','2333','0',_binary '',NULL,_binary '\0');
+INSERT INTO `tickets` VALUES (00005,'Genaro','Molina','genaro324@gsa.com','3','120','80',_binary '',NULL,_binary ''),(00006,'Genaro','Molina','genaro324@gsa.com','3','120','80',_binary '\0',NULL,_binary '\0'),(00055,'Gerardo','Aguilera','gabrielaguiler@hotmail.com.ar','3','120','80',_binary '',NULL,_binary ''),(00089,'Daniel','Villada','daniel@gmail.com','6','240','80',_binary '',NULL,_binary ''),(00090,'Matias','Gonzalez','matiasGonza6545@gmail.com','2','200','50',_binary '',NULL,_binary ''),(00091,'Miguel','Suarez','miguesuarez3545@gmail.com','5','500','50',_binary '',NULL,_binary '\0'),(00092,'Paola','Ceballos','paoce4356@jm.com','5','850','15',_binary '',NULL,_binary ''),(00093,'Julián','Cáceres','juliancaceres4345@fd.org','4','680','15',_binary '\0',NULL,_binary '\0'),(00094,'Gabriel','Aguilar','gabrielaguilar@hotmail.com.ar','3','510','15',_binary '',NULL,_binary '\0'),(00096,'Sonia','Velez','soni325345@lca.com','3','300','50',_binary '',NULL,_binary '');
 /*!40000 ALTER TABLE `tickets` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,4 +113,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-18  0:05:39
+-- Dump completed on 2023-12-18  5:49:29

@@ -21,6 +21,14 @@
     box-sizing: border-box;
     font-family: 'Noto Sans Osmanya', 'Roboto', sans-serif;
 }
+body{
+	display: flex;
+	min-height: 100vh;
+}
+
+
+
+
 a{
     text-decoration: none;
     color: var(--color-item-menu);
@@ -31,6 +39,7 @@ a{
     overflow: hidden;
     width: 100%;
     min-width: var(--min-width);
+    justify-content: space-between;
 } 
 /************ HEADER ************/
 .headerProject{

@@ -15,11 +15,9 @@
 	<title>Listado</title>
 	</head>
 	
-		<body onload="nobackbutton()">
-		
-		
-		
-	<%
+	<body onload="nobackbutton()">
+			
+<%
 	int tramite = 0;
 	String nombre = null;
 	String apellido = null;
@@ -34,13 +32,9 @@
 	boolean activo = false;
 	boolean pagado = false;
 	
-
 	int id =Integer.parseInt(request.getParameter("id"));
 		
-	
 	ConnectionController connectionController = new ConnectionController();	
-	
-
 	ResultSet resultSet =  connectionController.consult("SELECT * FROM base_oradores.tickets WHERE id_tickets="+id);
 		
 	if (resultSet.next()){
@@ -53,11 +47,6 @@
 		pago = resultSet.getString(6);
 		activo = resultSet.getBoolean(8);
 		pagado = resultSet.getBoolean(10);
-		 	
-/*		String nombre = resultSet.getString(2);
-		String nombre = resultSet.getString(2);
-		String nombre = resultSet.getString(2);
-*/		
 		
 	switch(descuento){
 	case "0":
@@ -85,25 +74,11 @@
 		value4 = "unSelected"; 
 	break;	
 	}
-
-
-
 	}
 	
-	
-	
-	
-	
-	%>
-		
-		
-		
-		
-		
-		
+%>
 
 		<div class="mainProject">
-
 			<div class="headerProject">
 				<div class="desktop">
 					<div class="menuLeft">
@@ -120,7 +95,7 @@
 								<a class="otro itemMobile linkMenu" href="../../index.html#oradores">Los oradores</a>
 								<a class="itemMobile linkMenu" href="../../index.html#formulario">Conviértete en
 									orador</a>
-								<a href="#" class="itemMobile linkMenu linkM_5">Compar tickets</a>
+								<a href="../pages/tickets.html" class="itemMobile linkMenu linkM_5">Compar tickets</a>
 							</div>
 						</div>
 						<a class="linkMenu hideMenu_1" id="linkM_1" href="../../index.html">La conferencia</a>
@@ -143,7 +118,7 @@
 								</li>
 							</ul>
 						</div>
-						<a class="linkMenu hide3 linkM_5" href="#">Comprar tickets</a>
+						<a class="linkMenu hide3 linkM_5" href="../pages/tickets.html">Comprar tickets</a>
 					</div>
 				</div>
 			</div>
@@ -152,12 +127,9 @@
 				<div class="container general">
 					<div class="row justify-content-center">
 						<div class="col-lg-8 col-xl-7">
-							<div class="row row-cols-1 row-cols-md-3 text-center">
-								
-							</div>
+							
 							<div class="saleText">
-							<h1 class="text-center  mb-4"> Modificar Trámite Nº <span id="tramite"><%=tramite %></span></h1>
-								
+								<h1 class="text-center  mb-4"> Modificar Trámite Nº <span id="tramite"><%=tramite %></span></h1>							
 							</div>
 							<form class="ticketForm" id="ticketForm" action="">
 								<div class="row gx-2">
@@ -206,54 +178,40 @@
 								</div>
 								<div id="showTotal" class="alert alert-primary mt-2 mb-4 text-center" role="alert"><b><h3>Valor de la compra: <span id="pago"><%=pago %></span> $</h3></b></div>
 								<div id="showWarning" class="alert alert-danger fst-italic mb-4" role="alert"> <i class="cac cac-warning"></i> Verifique que todos los datos cargados tengan un tílde verde en el extremo derecho.</div>
+																
 								
-								
-								
-								
-								<div class="row gx-2">
+								<div class="row gx-4">
 									<div class="col-md mb-3">
 										<div class="formInput">
 											<input type="checkbox" name="active" id="active" <% out.println(activo?"checked":"unChecked");%>>
 											<label for="active"> Registro Activo</label>
-											
 										</div>
-									
 									</div>
 									<div class="col-md mb-3">
 										<div class="formInput">
 											<input type="checkbox" name="paid" id="paid" <% out.println(pagado?"checked":"unChecked");%> >
-											<label  for="paid"> Pago Realizado</label>
-												
-										</div>
-										
+											<label  for="paid"> Pago Realizado</label>												
+										</div>	
 									</div>
 								</div>								
 															
 								
-								<div class="row gx-2 mb-2">
+								<div class="row gx-4 mb-2">
 									<div class="col-md mb-3">
-										<button type="reset" class="w-100 btn btn-lg btn-form buttonColor" id="restoreButton">Restaurar</button>
-									</div>
+											<button type="reset" class="w-100 btn btn-lg btn-form buttonColor" id="restoreButton">Restaurar</button>
+										</div>
 									<div class="col-md mb-3">
-										<button type="button" class="w-100 btn btn-lg btn-form buttonColor" id="cancelButton">Cancelar</button>
-									</div>
+									<button type="button" class="w-100 btn btn-lg btn-form buttonColor" id="cancelButton">Cancelar</button>
+								</div>
 								</div>
 								<div class="row gx-2 mb-2">
 									<div class="col-md mb-3">
-										<button type="button" class="w-100 btn btn-lg btn-form buttonColor" id="saveButton">Guardar cambios</button>
+										<button type="button" class="w-100 btn btn-lg btn-form buttonColor mb-3" id="saveButton">Guardar cambios</button>
 									</div>
 								</div>
 								
 							</form>
-								
-								
-								
-								
-								
-								
-								
-								
-								
+																
 						</div>
 					</div>
 				</div>
