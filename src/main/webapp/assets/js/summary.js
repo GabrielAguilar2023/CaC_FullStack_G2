@@ -71,7 +71,7 @@ function showSummary(){
     containerTicket.insertAdjacentHTML("beforeend","<div class='ticketButton'></div>");
     const ticketButton = document.querySelector(".ticketButton");
 // Crea los botones
-    ticketButton.appendChild(create('button',bottonClass,'confirm','Confirmar el Pago'));
+    ticketButton.appendChild(create('button',bottonClass,'confirm','Aceptar'));
     ticketButton.appendChild(create('button',bottonClass,'back','Volver'));
        
     function sendForm(){
