@@ -33,7 +33,7 @@
 								<a class="otro itemMobile linkMenu" href="../../index.html#oradores">Los oradores</a>
 								<a class="itemMobile linkMenu" href="../../index.html#formulario">Conviértete en
 									orador</a>
-								<a href="#" class="itemMobile linkMenu linkM_5">Compar tickets</a>
+								<a  class="itemMobile linkMenu linkM_5" href="../pages/tickets.html">Compar tickets</a>
 							</div>
 						</div>
 						<a class="linkMenu hideMenu_1" id="linkM_1" href="../../index.html">La conferencia</a>
@@ -56,13 +56,13 @@
 								</li>
 							</ul>
 						</div>
-						<a class="linkMenu hide3 linkM_5" href="#">Comprar tickets</a>
+						<a class="linkMenu hide3 linkM_5" href="../pages/tickets.html">Comprar tickets</a>
 					</div>
 				</div>
 			</div>
 				
-		<div class="container">
-	<%
+		<div class="container mt-2 mb-5">
+<%
 	ConnectionController connectionController = new ConnectionController();		
 //	ResultSet resultSet =  connectionController.consult("SELECT * FROM tickets WHERE Activo = TRUE");
 	ResultSet resultSet =  connectionController.consult("SELECT * FROM tickets");
@@ -101,14 +101,12 @@
 						
 			<button type="button" class="w-100 btn btn-lg btn-form buttonColor" id="modifyTicketButton" disabled>Modificar ticket seleccionado</button>
 									
-<!-- 	https://es.stackoverflow.com/questions/172279/c%C3%B3mo-pasar-par%C3%A1metros-de-una-fila-de-una-tabla-html-con-jsp 	----------------------------------  -->
-
 <%
 	ConnectionController connectionController2 = new ConnectionController();
 
 	ResultSet resultSet2 =  connectionController2.consult("SELECT * FROM oradores WHERE Activo = TRUE");
 	%>
-			<h1 class="text-center mt-5 pt-5 mb-4"> Listado de Oradores </h1>
+			<h1 class="text-center mt-5 mb-4"> Listado de Oradores </h1>
 	
 			<table class="table table-striped">			
 				<tr>					
@@ -128,9 +126,10 @@
 				%>
 			</table>
 	
+			<button type="reset" class="w-100 btn btn-lg btn-form buttonColor mt-5" id="aceptButton">Salir</button>
+		
 		</div>			
 		
-	<button type="reset" class="w-100 btn btn-lg btn-form buttonColor" id="aceptButton">Salir</button>
 	</div>
 			
 	<script src="../js/restrictedAccess.js"></script>
