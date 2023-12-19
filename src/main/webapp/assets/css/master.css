@@ -489,6 +489,12 @@ textarea{
   display: flex;
   position: relative;   
 }
+.formInput > .checkbox{
+	padding-left: 10px;
+}
+
+
+
 .error {
   display: none;
   bottom: 0;

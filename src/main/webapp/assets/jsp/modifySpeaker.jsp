@@ -22,60 +22,24 @@
 	String nombre = null;
 	String apellido = null;
 	String email = null;
-	int cantidad = 0;
-	String descuento = null;
-	String value1=null;
-	String value2=null;
-	String value3=null;
-	String value4=null;
-	String pago=null;
+	String tema = null;
+	
 	boolean activo = false;
-	boolean pagado = false;
+	
 	
 	int id =Integer.parseInt(request.getParameter("id"));
 		
 	ConnectionController connectionController = new ConnectionController();	
-	ResultSet resultSet =  connectionController.consult("SELECT * FROM base_oradores.tickets WHERE id_tickets="+id);
+	ResultSet resultSet =  connectionController.consult("SELECT * FROM oradores WHERE id_oradores=" + id);
 		
 	if (resultSet.next()){
 		tramite = resultSet.getInt(1);
 		nombre = resultSet.getString(2);
 		apellido = resultSet.getString(3);
 		email = resultSet.getString(4);
-		cantidad = resultSet.getInt(5);
-		descuento = resultSet.getString(7);
-		pago = resultSet.getString(6);
-		activo = resultSet.getBoolean(8);
-		pagado = resultSet.getBoolean(10);
-		
-	switch(descuento){
-	case "0":
-		value1 = "selected"; 
-		value2 = "unSelected"; 
-		value3 = "unSelected"; 
-		value4 = "unSelected"; 
-	break;
-	case "15":
-		value1 = "unSelected"; 
-		value2 = "unSelected"; 
-		value3 = "unSelected"; 
-		value4 = "selected"; 
-	break;
-	case "50":
-		value1 = "unSelected"; 
-		value2 = "unSelected"; 
-		value3 = "selected"; 
-		value4 = "unSelected"; 
-	break;
-	case "80":
-		value1 = "unSelected"; 
-		value2 = "selected"; 
-		value3 = "unSelected"; 
-		value4 = "unSelected"; 
-	break;	
+		tema = resultSet.getString(5);
+		activo = resultSet.getBoolean(6);
 	}
-	}
-	
 %>
 
 		<div class="mainProject">
@@ -149,7 +113,7 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-md mb-3">
+									<div class="col-md mb-1">
 										<div class="formInput">
 											<input type="email" class="form-control" value=<%=email %> aria-label="eMail" name="eMail" id="eMail" required>
 											<i class="cac validation-eMail" ></i>	
@@ -157,45 +121,25 @@
 										<p class="error error-eMail">Ingrese un E-mail válido</p>
 									</div>	
 								</div>
-								<div class="row gx-2">
-									<div class="col-md mb-3">
-										<label for="numberTickets" class="form-label">Cantidad</label>
-										<div class="formInput">
-											<input type="number" class="form-control" value=<%=cantidad %> aria-label="numberTickets" name="numberTickets" id="numberTickets" min="1" disabled>
-											<i class="cac validation-numberTickets" ></i>	
-										</div>
-										<p class="error error-numberTickets">Ingrese un número entero mayor que cero</p>
-									</div>
-									<div class="col-md mb-3">
-										<label for="categorySelector" class="form-label">Categoría</label>
-										<select class="form-select" aria-label="Categoría" id="categorySelector" disabled>
-											<option value = 1 <%=value1 %> >Sin Descuento</option>
-											<option value = 0.20 <%=value2 %> >Estudiante</option>
-											<option value = 0.50 <%=value3 %> >Trainee</option>
-											<option value = 0.85 <%=value4 %> >Junior</option>
-										</select>
-									</div>
-								</div>
-								<div id="showTotal" class="alert alert-primary mt-2 mb-4 text-center" role="alert"><b><h3>Valor de la compra: <span id="pago"><%=pago %></span> $</h3></b></div>
-								<div id="showWarning" class="alert alert-danger fst-italic mb-4" role="alert"> <i class="cac cac-warning"></i> Verifique que todos los datos cargados tengan un tílde verde en el extremo derecho.</div>
-																
 								
+								
+								<div class="form-floating mb-3">
+  									<textarea class="form-control pt-5" style="height: 100px"><%=tema %></textarea>
+  									<label for="floatingTextarea" class="pt-4" >Tema:</label>
+								</div>
+								
+								
+								
+								
+								<div id="showWarning" class="alert alert-danger fst-italic mb-4" role="alert"> <i class="cac cac-warning"></i> Verifique que todos los datos cargados tengan un tílde verde en el extremo derecho.</div>
 								<div class="row gx-4">
 									<div class="col-md mb-3">
 										<div class="formInput">
 											<input type="checkbox" name="active" id="active" <% out.println(activo?"checked":"unChecked");%>>
-											<label for="active" class="checkbox"> Registro Activo</label>
+											<label for="active" class="checkbox" > Registro Activo</label>
 										</div>
 									</div>
-									<div class="col-md mb-3">
-										<div class="formInput">
-											<input type="checkbox" name="paid" id="paid" <% out.println(pagado?"checked":"unChecked");%> >
-											<label  for="paid" class="checkbox"> Pago Realizado</label>												
-										</div>	
-									</div>
 								</div>								
-															
-								
 								<div class="row gx-4 mb-2">
 									<div class="col-md mb-3">
 											<button type="reset" class="w-100 btn btn-lg btn-form buttonColor" id="restoreButton">Restaurar</button>

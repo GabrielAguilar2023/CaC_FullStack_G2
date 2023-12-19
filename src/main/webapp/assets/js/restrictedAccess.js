@@ -7,43 +7,37 @@ const aceptButton = document.getElementById("aceptButton");
 let seleccionado;
 let speakerSelected;
 
-tablaTickets.addEventListener("click",ejecutar);
-tablaSpeakers.addEventListener("click",ejecutar2);
+tablaTickets.addEventListener("click",selectTicket);
+tablaSpeakers.addEventListener("click",selectSpeaker);
 
-function ejecutar(e){
+function selectTicket(e){
 	let fila = e.target.parentElement;
 	fila.classList.replace('normal','activa');
 	
 	if(window.activa !== undefined){
        window.activa.classList.replace('activa', 'normal');
     }
-       window.activa = event.target.parentElement;
+    window.activa = event.target.parentElement;
 		
 	seleccionado = fila.childNodes[1].id;
 	modifyTicketButton.disabled = false;
-	
+	modifySpeakerButton.disabled = true;
 	}
 	
-function ejecutar2(e){	
-	
+function selectSpeaker(e){	
 	let filaSpeaker = e.target.parentElement;
 	filaSpeaker.classList.replace('normal','activa');
-	
-
-	
+		
 	if(window.activa !== undefined){
        window.activa.classList.replace('activa', 'normal');
     }
-       window.activa = event.target.parentElement;
+    window.activa = event.target.parentElement;
 		
-	speakerSelected = fila.childNodes[1].id;
+	speakerSelected = filaSpeaker.childNodes[1].id;
 	modifySpeakerButton.disabled = false;
-	
+	modifyTicketButton.disabled = true;
 	}	
 	
-	
-	
-
 modifyTicketButton.addEventListener('click', _ => {
 // Llama al proceso de modificacion del registro seleccionado
      location.href=`modifyTicket.jsp?id=${seleccionado}`
@@ -51,8 +45,8 @@ modifyTicketButton.addEventListener('click', _ => {
         
 modifySpeakerButton.addEventListener('click', _ => {
 // Llama al proceso de modificacion del registro seleccionado
-     //location.href=`modifyTicket.jsp?id=${seleccionado}`
-     alert(123);
+     location.href=`modifySpeaker.jsp?id=${speakerSelected}`
+    
         });       
         
 aceptButton.addEventListener('click', _ => {
