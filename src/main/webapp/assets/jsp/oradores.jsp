@@ -14,10 +14,11 @@
 
 	String name = request.getParameter("name");
 	String surName = request.getParameter("surName");
+	String eMail = request.getParameter("eMail");
 	String areaForm = request.getParameter("areaForm");
 	 
 	ConnectionController connectionController = new ConnectionController();
-	connectionController.insertOradores(name,surName,areaForm);
+	connectionController.insertOradores(name,surName,eMail,areaForm);
 	
 %>
 

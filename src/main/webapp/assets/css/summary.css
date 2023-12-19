@@ -125,7 +125,6 @@ hr{
     display: flex;
     justify-content: flex-end;
     align-items: baseline;
-
 }
 #countTicket{
     padding-right: 0.2rem;
@@ -133,21 +132,17 @@ hr{
 }
 
 /* Evita imprimir los botones en la factura */
-
 @media print {
 	#confirm {display:none;}
 	#back {display:none;}
 	#formSend {display:none;}
 }
 
-
 /* Seleccion de filas de las tablas*/
-.activa{
-	
+.activa{	
 	background: gray;
 	color:white
   }
-  
-  .normal{
+ .normal{
   	background: white
   }

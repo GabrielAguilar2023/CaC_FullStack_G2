@@ -55,15 +55,16 @@ public class ConnectionController {
 		return resultSet;		
 	}
 		
-	public void insertOradores(String nombre, String apellido, String issue) {
+	public void insertOradores(String nombre, String apellido, String eMail, String issue) {
 		
-		String query = "INSERT INTO oradores(Nombre,Apellido,Tema) VALUES(?,?,?)";
+		String query = "INSERT INTO oradores(Nombre,Apellido,eMail,Tema) VALUES(?,?,?,?)";
 		try {
 			connectionQuery = connect();
 			preparedStatement = connectionQuery.prepareStatement(query);
 			preparedStatement.setString(1,nombre);
 			preparedStatement.setString(2,apellido);
-			preparedStatement.setString(3,issue);			
+			preparedStatement.setString(3,eMail);
+			preparedStatement.setString(4,issue);			
 			preparedStatement.executeUpdate();
 			close();
 		} catch (SQLException e) {
