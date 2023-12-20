@@ -77,7 +77,7 @@
 				</div>
 			</div>
 
-			<div class="bodyProject">
+		<div class="bodyProject">
 				<div class="container general">
 					<div class="row justify-content-center">
 						<div class="col-lg-8 col-xl-7">
@@ -118,7 +118,54 @@
 					</div>
 				</div>
 			</div>
-
+		
+		<div class="footerProject">
+				<ul>
+					<li>
+						<a href="#" class="linkFooter" id="linkF_1">
+							<p> Preguntas frecuentes</p>
+							<div><span class="cac cac-frequent_questions imgFooter" title="Preguntas frecuentes" ></span></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="linkFooter" id="linkF_2">
+							<p> Contactenos</p>
+							<div><span class="cac cac-contact imgFooter" title="Contáctenos" ></span></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="linkFooter" id="linkF_3">
+							<p> Prensa</p>
+							<div><span class="cac cac-press imgFooter" title="Prensa"></span></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="linkFooter" id="linkF_4">
+							<p> Conferencias</p>
+							<div><span class="cac cac-conferences imgFooter" title="Conferencias"></span></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="linkFooter" id="linkF_5">
+							<p>Términos y condiciones</p>
+							<div><span class="cac cac-terms imgFooter" title="Términos y Condiciones"></span></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="linkFooter" id="linkF_6">
+							<p>Privacidad</p>
+							<div><span class="cac cac-privacity imgFooter" title="Privacidad"></span></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="linkFooter" id="linkF_7">
+							<p>Estudiantes</p>
+							<div><span class="cac cac-students imgFooter" title="Estudiantes"></span></div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
 
 
 </div>
