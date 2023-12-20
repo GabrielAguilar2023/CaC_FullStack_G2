@@ -129,7 +129,7 @@
 						<div class="col-lg-8 col-xl-7">
 							
 							<div class="saleText">
-								<h1 class="text-center  mb-4"> Modificar Trámite Nº <span id="tramite"><%=tramite %></span></h1>							
+								<h1 class="text-center  mb-4"> Modificar Ticket Nº <span id="tramite"><%=tramite %></span></h1>							
 							</div>
 							<form class="ticketForm" id="ticketForm" action="">
 								<div class="row gx-2">

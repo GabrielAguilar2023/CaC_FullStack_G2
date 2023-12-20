@@ -116,6 +116,29 @@ public void modifyTickets(int id, String nombre, String apellido, String eMail, 
 		}
 	}
 	
+public void modifySpeakers(int id, String nombre, String apellido, String eMail, String tema, Boolean activo ) {
+	// UPDATE `base_oradores`.`tickets` SET `Nombre` = 'Miguel', `Apellido` = 'Suarez', `eMail` = 'miguesuarez3545@gmail.com', `Cantidad` = '5', `Pago` = '500', `Descuento` = '50', `Activo` = FALSE, `Pagado` = FALSE WHERE (`id_tickets` = '00091');
+		String query = "UPDATE oradores SET Nombre=?, Apellido =?, eMail =?, Tema=?, Activo=? WHERE (id_oradores =?)"; 
+		try {
+			connectionQuery = connect();
+			preparedStatement = connectionQuery.prepareStatement(query);
+			preparedStatement.setString(1,nombre);
+			preparedStatement.setString(2,apellido);
+			preparedStatement.setString(3,eMail);	
+			preparedStatement.setString(4,tema);	
+			preparedStatement.setBoolean(5,activo);		
+			preparedStatement.setInt(6, id);
+			
+			preparedStatement.executeUpdate();
+			close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+
+
 
 public boolean login(String usuario, String password)  {
 	String query = "select *from usuarios where ((Nombre = ? or eMail = ?) and Password = ?)and Activo = TRUE";

@@ -109,7 +109,7 @@
 	
 			<table id="listadoSpeakers" class="table table-striped">			
 				<tr>					
-					<th class="text-center">Tramite Nº</th>
+					<th class="text-center">Trámite Nº</th>
 					<th class="text-center">Nombre</th>
 					<th class="text-center">Apellido</th>
 					<th class="text-center">Email</th>
@@ -131,7 +131,7 @@
 				%>
 			</table>
 			
-			<button type="button" class="w-100 btn btn-lg btn-form buttonColor" id="modifySpeakerButton" xdisabled>Modificar orador seleccionado</button>
+			<button type="button" class="w-100 btn btn-lg btn-form buttonColor" id="modifySpeakerButton" disabled>Modificar orador seleccionado</button>
 	
 			<button type="reset" class="w-100 btn btn-lg btn-form buttonColor mt-5" id="aceptButton">Salir</button>
 		

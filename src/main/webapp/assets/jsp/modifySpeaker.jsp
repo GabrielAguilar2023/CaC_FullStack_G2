@@ -93,7 +93,7 @@
 						<div class="col-lg-8 col-xl-7">
 							
 							<div class="saleText">
-								<h1 class="text-center  mb-4"> Modificar Trámite Nº <span id="tramite"><%=tramite %></span></h1>							
+								<h1 class="text-center  mb-4"> Modificar Orador Nº <span id="tramite"><%=tramite %></span></h1>							
 							</div>
 							<form class="ticketForm" id="ticketForm" action="">
 								<div class="row gx-2">
@@ -124,7 +124,7 @@
 								
 								
 								<div class="form-floating mb-3">
-  									<textarea class="form-control pt-5" style="height: 100px"><%=tema %></textarea>
+  									<textarea class="form-control pt-5" name="tema" id="tema" style="height: 100px"><%=tema %></textarea>
   									<label for="floatingTextarea" class="pt-4" >Tema:</label>
 								</div>
 								
@@ -213,7 +213,7 @@
 		<script src="../js/bootstrap.bundle.min.js"></script>
 		<script src="../js/tickets.js"></script>
 		<script src="../js/summary.js"></script>
-		<script src="../js/modifyTickets.js"></script>
+		<script src="../js/modifySpeaker.js"></script>
 
 	</body>
 	

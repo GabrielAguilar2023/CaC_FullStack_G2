@@ -53,3 +53,10 @@ aceptButton.addEventListener('click', _ => {
 // Llama al proceso de modificacion del registro seleccionado
      location.href=`../../index.html`
 });
+
+function nobackbutton()
+		{
+		   window.location.hash="no-back-button";
+		   window.location.hash="Again-No-back-button"
+		   window.onhashchange=function(){window.location.hash="no-back-button";}   
+		}
