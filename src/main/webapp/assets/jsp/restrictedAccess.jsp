@@ -64,7 +64,6 @@
 		<div class="container mt-2 mb-5">
 <%
 	ConnectionController connectionController = new ConnectionController();		
-//	ResultSet resultSet =  connectionController.consult("SELECT * FROM tickets WHERE Activo = TRUE");
 	ResultSet resultSet =  connectionController.consult("SELECT * FROM tickets");
 	%>
 			<h1 class="text-center mt-5 pt-5 mb-4"> Listado de Tickets </h1>
@@ -104,27 +103,35 @@
 <%
 	ConnectionController connectionController2 = new ConnectionController();
 
-	ResultSet resultSet2 =  connectionController2.consult("SELECT * FROM oradores WHERE Activo = TRUE");
+	ResultSet resultSet2 =  connectionController2.consult("SELECT * FROM oradores");
 	%>
 			<h1 class="text-center mt-5 mb-4"> Listado de Oradores </h1>
 	
-			<table class="table table-striped">			
+			<table id="listadoSpeakers" class="table table-striped">			
 				<tr>					
+					<th class="text-center">Trámite Nº</th>
 					<th class="text-center">Nombre</th>
 					<th class="text-center">Apellido</th>
+					<th class="text-center">Email</th>
 					<th class="text-center">Tema</th>
+					<th class="text-center">Activo</th>
 				</tr>
 					
 				<% while(resultSet2.next()){ %>
-				<tr>					
+				<tr class="normal">					
+					<th class="text-center" scope="row" id="<%= resultSet2.getInt(1)%>"><%= resultSet2.getInt(1)%></th>
 					<td class="text-center"><%= resultSet2.getString(2)%></td>
 					<td class="text-center"><%= resultSet2.getString(3)%></td>
 					<td class="text-center"><%= resultSet2.getString(4)%></td>
+					<td class="text-center"><%= resultSet2.getString(5)%></td>
+					<td class="text-center"><INPUT type="checkbox"  disabled <% out.println((resultSet2.getBoolean(6)?"checked":"unChecked"));%>></td>
 				</tr>
 				<% } 
 				connectionController2.close();
 				%>
 			</table>
+			
+			<button type="button" class="w-100 btn btn-lg btn-form buttonColor" id="modifySpeakerButton" disabled>Modificar orador seleccionado</button>
 	
 			<button type="reset" class="w-100 btn btn-lg btn-form buttonColor mt-5" id="aceptButton">Salir</button>
 		

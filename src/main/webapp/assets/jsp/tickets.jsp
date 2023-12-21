@@ -11,30 +11,28 @@
 	<link rel="stylesheet" href="../css/index.css">
 	<link rel="stylesheet" href="../css/summary.css">
 	
-	<title>Pagar tickets</title>
+	<title>Compra de tickets</title>
 	</head>
 	<body onload="nobackbutton()">
 
-	<%
-
-	String name = request.getParameter("name");
-	String surName = request.getParameter("surName");
-	String eMail = request.getParameter("eMail");
-	String numberTickets = request.getParameter("numberTickets");
-	String pay = request.getParameter("pay");
-	String discount = String.valueOf( Math.round(((1f - Float.valueOf(request.getParameter("discount")))*100)));
-		
+<%
+		String name = request.getParameter("name");
+		String surName = request.getParameter("surName");
+		String eMail = request.getParameter("eMail");
+		String numberTickets = request.getParameter("numberTickets");
+		String pay = request.getParameter("pay");
+		String discount = String.valueOf( Math.round(((1f - Float.valueOf(request.getParameter("discount")))*100)));
+					
+		ConnectionController connectionController = new ConnectionController();	
+		connectionController.insertTickets(name, surName, eMail, numberTickets, pay, discount);
 	
-	ConnectionController connectionController = new ConnectionController();	
-	connectionController.insertTickets(name, surName, eMail, numberTickets, pay, discount);
+		ResultSet resultSet =  connectionController.consult("SELECT max(id_tickets) FROM tickets");
+			
+		String tramite = resultSet.next()? String.valueOf(resultSet.getInt(1)):"Error en la base de datos";
+%>
+		<div class="mainProject">
 
-	ResultSet resultSet =  connectionController.consult("SELECT max(id_tickets) FROM tickets");
-		
-	String tramite = resultSet.next()? String.valueOf(resultSet.getInt(1)):"Error en la base de datos";
-	%>
-<div class="mainProject">
-
-		<div class="headerProject">
+			<div class="headerProject">
 				<div class="desktop">
 					<div class="menuLeft">
 						<div class="imgLogo"><img src="../img/codoacodo.png" class="imageLogo" alt="logo Codo a Codo">
@@ -82,29 +80,79 @@
 				<div class="container general">
 					<div class="row justify-content-center">
 						<div class="col-lg-8 col-xl-7">
-							<div class="row row-cols-1 row-cols-md-3 text-center">
-															
+							
+							<div class="col mt-3">
+								<div class="card1 card mb-4 rounded-3 shadow-sm border-success">
+									<div class="card-header py-3 text-white bg-success border-success">
+										<h4 class="my-0 fw-normal text-center">Compra de tickets</h4>
+									</div>
+									<div class="card-body m-1">
+										
+										<div class="mt-3">
+																	
+											<p class="text-center mb-3"><b>Cuando se acredite su pago</b> será contactado por email para confirmarle su ubicación en la sala</p>
+											<h3 class="text-center m-4" id="tramite"> N° Tramite: <%=tramite %> </h3>										
+											<p class="text-center mt-3"><small><i><b>*</b>  Si tiene algun inconveniente con el pago del ticket, comunicarse con 0800-4440-2522 e indique el N° de tramite.</i></small></p>
+										
+										</div>
+										<button type="reset" class="w-100 btn btn-lg btn-form buttonColor mb-2" id="aceptButton">Aceptar</button>
+
+									</div>
+								</div>
 							</div>
-							<div class="saleText">	
-								<h1 class="text-center"> Compra de tickets</h1>
-							</div>
-							
-							<div class="mt-5">
-								
-								<p class="text-center"><b>Cuando se acredite su pago</b> será contactado por email para confirmarle su ubicación en la sala</p>
-								<p class="text-center"> Si tiene algun inconveniente con el pago del ticket, comunicarse con 0800-4440-2522 e indique el N° de tramite.</p>
-							
-								<h3 class="text-center" id="tramite"> N° Tramite: <%=tramite %> </h3>										
-							</div>
-								<button type="reset" class="w-100 btn btn-lg btn-form buttonColor mt-4" id="aceptButton">Aceptar</button>
-							
-							
-								
 						</div>
 					</div>
 				</div>
 			</div>
 
+
+			<div class="footerProject">
+				<ul>
+					<li>
+						<a href="#" class="linkFooter" id="linkF_1">
+							<p> Preguntas frecuentes</p>
+							<div><span class="cac cac-frequent_questions imgFooter" title="Preguntas frecuentes" ></span></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="linkFooter" id="linkF_2">
+							<p> Contactenos</p>
+							<div><span class="cac cac-contact imgFooter" title="Contáctenos" ></span></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="linkFooter" id="linkF_3">
+							<p> Prensa</p>
+							<div><span class="cac cac-press imgFooter" title="Prensa"></span></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="linkFooter" id="linkF_4">
+							<p> Conferencias</p>
+							<div><span class="cac cac-conferences imgFooter" title="Conferencias"></span></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="linkFooter" id="linkF_5">
+							<p>Términos y condiciones</p>
+							<div><span class="cac cac-terms imgFooter" title="Términos y Condiciones"></span></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="linkFooter" id="linkF_6">
+							<p>Privacidad</p>
+							<div><span class="cac cac-privacity imgFooter" title="Privacidad"></span></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="linkFooter" id="linkF_7">
+							<p>Estudiantes</p>
+							<div><span class="cac cac-students imgFooter" title="Estudiantes"></span></div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
 
 
 </div>				

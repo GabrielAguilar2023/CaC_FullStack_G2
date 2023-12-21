@@ -94,8 +94,8 @@
 				
 				<br>
 					
-				<p class="text-center"><b>Cuando se acredite su pago, su Nº de Trámite aparecerá en esta lista</b> y será contactado por email para confirmarle su ubicación en la sala.</p>
-				<p class="text-center"> Si tiene algun inconveniente con el pago del ticket, comunicarse con 0800-4440-2522 e indique el N° de tramite.</p>	
+				<p class="text-center"><small>Cuando se acredite su pago,<b> su Nº de Trámite aparecerá en esta lista como "Pagado"</b> y será contactado por email para confirmarle su ubicación en la sala.</small></p>
+				<p class="text-center"><small><b>* </b> Si tiene algun inconveniente con el pago del ticket, comunicarse con 0800-4440-2522 e indique el N° de tramite.</small></p>	
 
 				<button type="reset" class="w-100 btn btn-lg btn-form buttonColor mt-3" id="aceptButton">Volver</button>
 						
