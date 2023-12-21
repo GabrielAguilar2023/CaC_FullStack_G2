@@ -62,49 +62,52 @@
 			<div class="bodyProject">
 				<div class="container general">
 					<div class="row justify-content-center">
-						<div class="col-lg-8 col-xl-7">
-							<div class="row row-cols-1 row-cols-md-3 text-center">
-															
-							</div>
-							<div class="saleText">
+						<div class="col-lg-8 col-xl-7">						
+							<div class="col">
+								<div class="card1 card mb-4 rounded-3 shadow-sm border-success">
 								
-								<p id="ticketValue">Inicio de sesión</p>
-							</div>
-							<form class="ticketForm" id="ticketForm" action="../jsp/login.jsp">
-					
-								<div class="row">
-									<div class="col-md mb-3">
-										<label for="usuario" class="form-label">Usuario o E-mail</label>
-										<div class="formInput">
-											<input type="text" class="form-control"  aria-label="usuario" name="usuario" id="usuario" required>
-											<i class="cac validation-eMail" ></i>	
-										</div>
-										<p class="error error-eMail">Ingrese un E-mail válido</p>
-									</div>	
-								</div>
-								
-								<div class="row">
-									<div class="col-md mb-3">
-									<label for="password" class="form-label">Contraseña</label>
-										<div class="formInput">
-											<input type="password" class="form-control"  aria-label="password" name="password" id="password" required>
-											<i class="cac validation-eMail" ></i>	
-										</div>
-										<p class="error error-eMail">Ingrese una contraseña valida</p>
-									</div>	
-								</div>
-								
-								
-								
-								<div class="row gx-2 mb-2">
+									<div class="card-header py-3 text-white bg-success border-success">
+										<h4 class="my-0 fw-normal text-center">Inicio de Sesión</h4>
+									</div>
 									
-									<div class="col-md mb-3">
-										<button type="submit" class="w-100 btn btn-lg btn-form buttonColor" id="resumenButton">Ingresar</button>
+									<div class="card-body">
+									
+										<form class="ticketForm" id="ticketForm" action="../jsp/login.jsp">
+											<div class="row">
+												<div class="col-md mb-3">
+													<label for="usuario" class="form-label">Usuario o E-mail</label>
+													<div class="formInput">
+														<input type="text" class="form-control"  aria-label="usuario" name="usuario" id="usuario" required>
+														<i class="cac validation-eMail" ></i>	
+													</div>
+													<p class="error error-eMail">Ingrese un E-mail válido</p>
+												</div>	
+											</div>
+											
+											<div class="row">
+												<div class="col-md mb-3">
+												<label for="password" class="form-label">Contraseña</label>
+													<div class="formInput">
+														<input type="password" class="form-control"  aria-label="password" name="password" id="password" required>
+														<i class="cac validation-eMail" ></i>	
+													</div>
+													<p class="error error-eMail">Ingrese una contraseña valida</p>
+												</div>	
+											</div>			
+											<div class="row gx-4 mb-2 mt-3">
+											
+												<div class="col-md mb-2">
+													<button type="submit" class="w-100 btn btn-lg btn-form buttonColor" id="resumenButton">Ingresar</button>
+												</div>
+											
+												<div class="col-md mb-2">
+													<button type="button" class="w-100 btn btn-lg btn-form buttonColor" onclick ="location.href='../../index.html';" id="cancelButton">Salir</button>
+												</div>
+											</div>							
+										</form>								
 									</div>
 								</div>
-								
-							</form>
-								
+							</div>								
 						</div>
 					</div>
 				</div>
@@ -157,6 +160,6 @@
 				</ul>
 			</div>	
 		</div>
-		<script src="../js/bootstrap.bundle.min.js"></script>
+		<script src="../js/bootstrap.bundle.min.js"></script>		
 	</body>
 </html>
